@@ -48,7 +48,7 @@ const LoginbtnStyles = {
     position: "fixed", // 상단에 고정
     top: 0, // 상단에 위치
     marginTop: "33px",
-    marginLeft: "60%",
+    marginLeft: "55%",
  },
 
   //로그아웃버튼 styles
