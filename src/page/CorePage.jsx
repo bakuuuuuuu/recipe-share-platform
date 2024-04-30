@@ -9,7 +9,7 @@ const CorepageStyles ={
       alignItems: 'center',
       height: '100vh', // 화면 전체 높이를 차지  
   },
-  //
+
   //중앙 영역 styles
   centralContentStyle: {
     width: "600px", // 중앙 컨텐츠의 너비를 100%로 설정하여 가로 전체 차지
@@ -30,11 +30,11 @@ const CorepageStyles ={
   
   //이미지 크기 조절 styles
   imageWrapper: {
-    width: '600px', // 이미지 wrapper의 너비를 100%로 설정
-    height: '350px', // 이미지 wrapper의 높이를 300px로 설정
-    borderRadius:"3px",
-    marginTop:'48%',
-    right:'0',
+    width: '600px',
+    height: '350px',
+    borderRadius: '3px',
+    marginTop: '48%',
+    right: '0',
   },
 
   //추천메뉴 이미지 박스
@@ -45,7 +45,7 @@ const CorepageStyles ={
 
   //추천 메뉴 영역 styles
   RecommendWrapper: {
-    marginTop: '50px', // 위쪽 여백 설정
+    marginTop: '30px', // 위쪽 여백 설정
   },
 
   // 그리드 스타일
