@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const FoodCategoryButton = ({ category, onClick }) => {
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const dynamicStyles = {
+    ...styles.button,
+    transform: isHovered ? 'scale(1.2)' : 'none',  
+    boxShadow: isHovered ? '0 0 10px #fff' : 'none', 
+  };
+
   return (
-    <button onClick={onClick} style={styles.button}>
+    <button
+      onClick={onClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      style={dynamicStyles}
+    >
       <img src={category.image} alt={category.name} style={styles.image} />
       <span style={styles.text}>{category.name}</span>
     </button>
@@ -16,25 +38,27 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     margin: '10px',
-    padding: '10px',
+    padding: '15px',
     backgroundColor: '#35292A',
     border: 'none',
     borderRadius: '10px',
     cursor: 'pointer',
-    width: '150px',  // 버튼 너비 조정
-    height: '180px',  // 버튼 높이 조정
+    width: '130px',
+    height: '160px',
     overflow: 'hidden',
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',  
+    marginTop: '110px',  
   },
   image: {
-    width: '100%',  // 이미지 너비 최대화
-    height: '80%',  // 이미지 높이를 버튼 높이의 80%로 설정
+    width: '100%',
+    height: '80%',
   },
   text: {
     marginTop: '5px',
-    fontSize: '20px',  // 글자 크기 조정
-    fontWeight: 'bold',  // 글자 굵기
-    color: '#fff',  // 글자 색상
-    fontFamily: 'Arial, sans-serif'  // 폰트 패밀리
+    fontSize: '20px',
+    fontWeight: 'bold',
+    color: '#fff',
+    fontFamily: 'Arial, sans-serif'
   }
 };
 

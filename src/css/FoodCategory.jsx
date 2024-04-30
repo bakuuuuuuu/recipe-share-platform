@@ -1,5 +1,7 @@
 import React from 'react';
 import FoodCategoryButton from '../page/FoodCategoryButton';
+import Search from '../page/Search';
+import UnderMenu from '../page/UnderMenu';
 
 const categories = [
   { name: '전체', image: 'image/all.jpg' },
@@ -7,10 +9,10 @@ const categories = [
   { name: '양식', image: 'image/western.jpg' },
   { name: '중식', image: 'image/chinese.jpg' },
   { name: '일식', image: 'image/japanese.jpg' },
-  { name: '디저트', image: 'image/dessert.jpg' },//hjhjj
+  { name: '디저트', image: 'image/dessert.jpg' },
 ];
 
-const FoodCategory = () => {
+const FoodCategoryMenu = () => {
   const handleClick = (categoryName) => {
     console.log(`${categoryName} was clicked`);
   };
@@ -37,5 +39,15 @@ const styles = {
     margin: 'auto'
   }
 };
+
+function FoodCategory(props) {
+  return (
+    <div>
+      <Search />
+      <FoodCategoryMenu />
+      <UnderMenu />
+    </div>
+  );     
+}
 
 export default FoodCategory;
