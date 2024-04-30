@@ -1,4 +1,4 @@
-const CorepageStyles = {
+const CorepageStyless = {
     corePageStyle: {
       display: 'flex',
       justifyContent: 'center',
@@ -44,4 +44,4 @@ const CorepageStyles = {
     },
   };
   
-  export default CorepageStyles;
+  export default CorepageStyless;
