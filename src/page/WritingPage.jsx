@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CorepageStyles from './CorepageStyle';
 import { BrowserRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
@@ -8,8 +8,14 @@ const WritingPage = () => {
   const [image, setImage] = useState(null);
   const [category, setCategory] = useState('');
   const [idCounter, setIdCounter] = useState(1);
-  
+  const [currentUser, setCurrentUser] = useState(null);
 
+  useEffect(() => {
+    // 로컬 스토리지에서 현재 로그인한 사용자 정보를 가져옵니다.
+    const userData = JSON.parse(localStorage.getItem('currentData'));
+    setCurrentUser(userData);
+  }, []);
+  
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -29,6 +35,10 @@ const WritingPage = () => {
     console.log('내용:', content);
     console.log('이미지:', image);
     console.log('카테고리:', category);
+    console.log('사용자id:', currentUser)
+
+    const cuid = currentUser ? currentUser.id : ''; // 현재 로그인한 사용자의 아이디
+    const imageUrl = image ? URL.createObjectURL(image) : null;
    
    
     const id = idCounter.toString();
@@ -39,11 +49,12 @@ const WritingPage = () => {
     
     // 작성된 정보를 로컬 스토리지에 저장
     const recipe = {
+      cuid,
       id,
       title,
       content,
       category,
-      imageUrl: image ? URL.createObjectURL(image) : null,
+      imageUrl
            
     };
     const storedRecipes = localStorage.getItem('recipes');
@@ -52,6 +63,7 @@ const WritingPage = () => {
     localStorage.setItem('recipes', JSON.stringify(recipes));
 
     // 저장 후 입력 내용 초기화
+    setCurrentUser('');
     setTitle('');
     setContent('');
     setImage(null);
