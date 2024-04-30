@@ -1,6 +1,6 @@
 //SignUpForm.jsx
 import React, { useState } from 'react';
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../css/SignUpForm.css';
 import Icon from '../image/home.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -52,7 +52,7 @@ const SignUpForm = () => {
         navigate('/');
     };
 
-    const handleSubmit = async(event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         // 로컬 스토리지에서 기존 사용자 데이터를 확인합니다.
@@ -64,7 +64,7 @@ const SignUpForm = () => {
         if (isDuplicate) {
             alert("중복된 아이디입니다. 다시 입력해주세요.");
         }
-        
+
         else {
             // 사용자 입력 데이터를 객체로 구성
             const userData = {
@@ -80,20 +80,20 @@ const SignUpForm = () => {
 
             // 로컬 스토리지에 회원가입 정보 저장
             localStorage.setItem('userData', JSON.stringify(userData));
-            
+
             alert("회원가입이 완료되었습니다!");
 
             // 회원가입 완료 후 LoginForm으로 이동합니다.
-            navigate('/login'); 
+            navigate('/login');
         }
-        
+
     };
 
     return (
         <div>
-            <header className="header">
-                <img src={Icon} alt="홈" id='home' onClick={handleHomeClick} />
-            </header>
+            <div id="header">
+                <input type="button" id='home' onClick={handleHomeClick} value={"SimplyCook"} />
+            </div>
             <div>
                 <h2>회원가입</h2>
                 <form onSubmit={handleSubmit}>

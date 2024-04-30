@@ -94,7 +94,7 @@ function Search({ data }) {
         <input
           type="text"
           value={query}
-          placeholder="요리 및 카테고리 검색"
+          placeholder="음식 카테고리 검색(ex 한식)"
           onChange={handleSearch}
           style={{ width: "30%", height: "40%", fontSize: 12, borderRadius: "10px", border: "1px solid black",}}
         />
