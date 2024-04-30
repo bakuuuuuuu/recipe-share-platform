@@ -1,3 +1,8 @@
+## 시작할 때 오류 뜰 경우 ( react-script 부재 오류 )
+
+터미널에 npm install -save react-scripts
+이후 npm start
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

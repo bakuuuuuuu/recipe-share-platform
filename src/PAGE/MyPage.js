@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import '../style/MyPage.css'
+import '../css/MyPage.css'
 import { Outlet, useOutlet } from 'react-router-dom'
 import MyPageMenu from '../component/MyPageMenu';
 
