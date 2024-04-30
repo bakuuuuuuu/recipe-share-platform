@@ -80,6 +80,15 @@ function Search({ data }) {
         />
       </a>
 
+      {/* 로그인 버튼 */}
+      <a href='Logout'>
+        <input
+          style={LoginbtnStyles.LoginBtn}
+          type="button"    
+          value={"로그아웃"}
+        />
+      </a>
+
       <div style={searchStyles.searchbar}>
         {/*상단 메인배너(홈링크 이동)*/}
         <a href='http://localhost:3000/'>
