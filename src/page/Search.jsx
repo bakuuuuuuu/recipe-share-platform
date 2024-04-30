@@ -20,11 +20,11 @@ const searchStyles = {
   
   //검색창 styles
   searchbar: {
-    width: "100%",
+    width: "60%",
     height: "100%",
     display: "flex",
     alignItems: "center",
-    marginLeft: "33%",
+    marginLeft: "30%",
   },
 
   //상단 메인배너(홈링크 이동) styles
