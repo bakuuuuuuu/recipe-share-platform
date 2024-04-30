@@ -38,7 +38,7 @@ function App() {
         <Route path="posts" element={<Posts />} />
         <Route path="EditProfile" element={<EditProfile />} />
       </Route>
-    </Routes>
+    </Routes>//
 </>
   );
 }
