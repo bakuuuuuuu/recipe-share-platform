@@ -39,7 +39,9 @@ const LoginForm = () => {
         if (id === inputId && password === inputPassword) {
 
             // 로그인 성공 시 MainPage로 이동합니다.
-            navigate('/main');
+            navigate('/main'); // 사용자 정보를 상태로 전달
+            localStorage.setItem('currentData', JSON.stringify(userData));
+
         } else {
             // 로그인 실패 시 알림을 표시합니다.
             alert('로그인 실패: 아이디 또는 비밀번호가 올바르지 않습니다.');
