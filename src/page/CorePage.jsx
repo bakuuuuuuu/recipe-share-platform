@@ -9,7 +9,7 @@ const CorepageStyles ={
       alignItems: 'center',
       height: '100vh', // 화면 전체 높이를 차지  
   },
-
+  //
   //중앙 영역 styles
   centralContentStyle: {
     width: "600px", // 중앙 컨텐츠의 너비를 100%로 설정하여 가로 전체 차지
