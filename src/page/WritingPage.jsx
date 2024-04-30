@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CorepageStyles from './CorepageStyle';
+import { useNavigate } from 'react-router-dom';
 
 const WritingPage = () => {
     const [title, setTitle] = useState('');
@@ -7,6 +8,7 @@ const WritingPage = () => {
     const [image, setImage] = useState(null);
     const [category, setCategory] = useState('');
     const [noCounter, setNoCounter] = useState(1);
+    const navigate = useNavigate();
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
@@ -47,6 +49,8 @@ const WritingPage = () => {
         setContent('');
         setImage(null);
         setCategory('');
+
+        navigate('/');
     };
 
     const handleCancel = () => {
