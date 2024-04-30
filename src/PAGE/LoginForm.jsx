@@ -1,11 +1,11 @@
 //LoginForm.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './CSS/LoginForm.css';
-import Icon from './IMAGE/home.png';
-import Naver from './IMAGE/naver.png';
-import Google from './IMAGE/google.png';
-import Facebook from './IMAGE/facebook.png';
+import '../CSS/LoginForm.css';
+import Icon from '../IMAGE/home.png';
+import Naver from '../IMAGE/naver.png';
+import Google from '../IMAGE/google.png';
+import Facebook from '../IMAGE/facebook.png';
 
 const LoginForm = () => {
     // useState 훅을 사용하여 사용자 입력을 관리합니다.

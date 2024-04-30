@@ -4,9 +4,9 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
-import LoginForm from './LoginForm';
-import SignUpForm from './SignUpForm';
-import MainPage from './MainPage';
+import LoginForm from './PAGE/LoginForm';
+import SignUpForm from './PAGE/SignUpForm';
+import MainPage from './PAGE/MainPage';
 
 function App() {
   return (

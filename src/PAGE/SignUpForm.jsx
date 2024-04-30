@@ -1,8 +1,8 @@
 //SignUpForm.jsx
 import React, { useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
-import './CSS/SignUpForm.css';
-import Icon from './IMAGE/home.png';
+import '../CSS/SignUpForm.css';
+import Icon from '../IMAGE/home.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock, faEnvelope, faUserCircle, faPhone, faVenusMars, faThList } from '@fortawesome/free-solid-svg-icons';
 
