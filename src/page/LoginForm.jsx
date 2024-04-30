@@ -32,6 +32,12 @@ const LoginForm = () => {
         // 회원가입 정보를 로컬 스토리지에서 가져옵니다.
         const userData = JSON.parse(localStorage.getItem('userData'));
 
+        // 저장된 데이터가 존재하지 않거나, 저장된 데이터가 비어있는 경우
+        if (!userData || Object.keys(userData).length === 0) {
+            alert("생성된 계정이 없습니다. 회원가입을 먼저 해주세요.");
+            return;
+        }
+
         // 입력된 아이디와 비밀번호를 가져옵니다.
         const { id: inputId, password: inputPassword } = userData;
 
