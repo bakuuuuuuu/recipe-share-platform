@@ -7,7 +7,6 @@ const imageStyle = {
 
 const profileStyle = {
     backgroundColor: "white",
-    background: "url(`https://recipe1.ezmember.co.kr/img/mobile/my_pic_d2.jpg`) center top no-repeat)",
     padding: "20px 15px",
     display: "flex",
 
@@ -20,7 +19,7 @@ const profileStyle = {
 
 function Profile(props) {
     const { src, name } = props;
-
+    
     return (<div className="Profile" style={profileStyle}>
         <img style={imageStyle} src={src} alt="userProfileImage"></img>
         <span style={profileStyle.userNameStyle}>{name}</span>
