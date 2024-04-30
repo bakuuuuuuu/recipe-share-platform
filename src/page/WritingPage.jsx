@@ -57,8 +57,8 @@ const WritingPage = () => {
         navigate('/');
     };
 
-    const handleImageAddButtonClick = () => {
-        // 이미지 추가 버튼을 클릭할 때 파일 선택 창을 엽니다.
+    const handleImageAddButtonClick = (e) => {
+        e.preventDefault();  // 이미지 추가 버튼을 클릭할 때 파일 선택 창을 엽니다.
         document.getElementById('imageInput').click();
     };
 
