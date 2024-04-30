@@ -54,7 +54,7 @@ const WritingPage = () => {
     };
 
     const handleCancel = () => {
-        // 취소 버튼을 눌렀을 때의 동작을 정의할 수 있습니다.
+        navigate('/');
     };
 
     const handleImageAddButtonClick = () => {
