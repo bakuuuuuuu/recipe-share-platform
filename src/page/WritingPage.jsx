@@ -78,8 +78,8 @@ const WritingPage = () => {
                 <div style={{ ...CorepageStyles.sideContentStyle }}> {/* 좌측 사이드 영역 */}
                     {/* 여기에 좌측 사이드 영역의 내용을 추가하세요 */}
                 </div>
-                <div style={{ ...CorepageStyles.centralContentStyle, margin: '0 auto' }}> {/* 중앙 영역 */}
-                    <h2 style={{ textAlign: 'center' }}>레시피</h2>
+                <div style={{ ...CorepageStyles.centralContentStyle,  marginTop: '0' }}> {/* 중앙 영역 */}
+                    <h2 style={{ textAlign: 'center'}}>레시피</h2>
                     <form style={CorepageStyles.formStyle} onSubmit={handleSubmit}>
                         <input
                             type="text"
