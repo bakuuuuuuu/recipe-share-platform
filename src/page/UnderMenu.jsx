@@ -1,5 +1,11 @@
 //하단 영역 jsx
 import React, { useState } from 'react';
+import {NavLink, Outlet} from 'react-router-dom';
+
+const mainStyle = {
+    width: "100%",
+    height: "100vh",
+}
 
 const UnderMenuStyles = {
     MenuContainer: {
@@ -55,25 +61,27 @@ function UnderMenu(props) {
         }
     };
     */
-
-    return (
-        <div style={UnderMenuStyles.MenuContainer}>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight: '30px' }}>
-                <a href='http://localhost:3000/'>
-                    <button type='button' style={selectedButton === 'HOME' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle}>HOME</button>
-                </a>
-                <a href='#1'>
-                    <button type='button' style={selectedButton === 'CATEGORY' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('CATEGORY')}>CATEGORY</button>
-                </a>
-                <a href='#2'>
-                    <button type='button' style={selectedButton === 'POSTING' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('POSTING')}>POSTING</button>
-                </a>
-                <a href='#3'>
-                    <button type='button' style={selectedButton === 'MYPAGE' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('MYPAGE')}>MYPAGE</button>
-                </a>
+        return (
+            <div style={mainStyle}>
+            <Outlet/>
+            <div style={UnderMenuStyles.MenuContainer}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight: '30px' }}>
+                    <NavLink to="/" style={selectedButton === 'HOME' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('HOME')}>
+                        HOME
+                    </NavLink>
+                    <NavLink to="/foodcategory" style={selectedButton === 'CATEGORY' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('CATEGORY')}>
+                        CATEGORY
+                    </NavLink>
+                    <NavLink to="/Writingpage" style={selectedButton === 'POSTING' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('POSTING')}>
+                        POSTING
+                    </NavLink>
+                    <NavLink to="/mypage" style={selectedButton === 'MYPAGE' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('MYPAGE')}>
+                        MYPAGE
+                    </NavLink>
+                </div>
             </div>
-        </div>
-    );
-}
+            </div>
 
+        );
+    }
 export default UnderMenu;
