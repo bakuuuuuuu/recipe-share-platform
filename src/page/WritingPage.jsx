@@ -57,7 +57,8 @@ const WritingPage = () => {
         navigate('/');
     };
 
-    const handleImageAddButtonClick = () => {
+    const handleImageAddButtonClick = (e) => {
+        e.preventDefault();  
         // 이미지 추가 버튼을 클릭할 때 파일 선택 창을 엽니다.
         document.getElementById('imageInput').click();
     };
@@ -68,7 +69,7 @@ const WritingPage = () => {
                 {/* Header 영역 */}
                 <header style={headerStyle}>
                     <a href="https://naver.com" >
-                        <img src="https://recipe1.ezmember.co.kr/img/mobile/logo6.png" alt="로고" style={{ width: '200px' }} />
+                        <img src="https://recipe1.ezmember.co.kr/img/mobile/logo6.png" alt="로고" style={{ width: '150px' }} />
                         {/* 사용자 프로필 이미지나 로그인/로그아웃 버튼 등을 추가할 수 있습니다. */}
                     </a>
                 </header>
