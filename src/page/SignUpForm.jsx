@@ -91,9 +91,9 @@ const SignUpForm = () => {
 
     return (
         <div>
-            <header className="header">
-                <img src={Icon} alt="홈" id='home' onClick={handleHomeClick} />
-            </header>
+            <div id="header">
+                <input type="button" id='home' onClick={handleHomeClick} value={"SimplyCook"} />
+            </div>
             <div>
                 <h2>회원가입</h2>
                 <form onSubmit={handleSubmit}>
