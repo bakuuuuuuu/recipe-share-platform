@@ -11,6 +11,7 @@ const CorepageStyles = {
       padding: '20px', // 내부 여백
       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // 그림자 효과 추가
       borderRadius: '8px', // 모서리를 둥글게 만듦
+      
     },
     sideContentStyle : {
       flex: '1', // 나머지 영역을 균등하게 나눔
