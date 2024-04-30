@@ -58,7 +58,7 @@ const LoginForm = () => {
     return (
         <div>
             <div id="header">
-                <img src={Icon} alt="홈" id='home' onClick={handleHomeClick} />
+                <input type="button" id='home' onClick={handleHomeClick} value={"SimplyCook"} />
             </div>
             <div>
                 <h2>로그인</h2>

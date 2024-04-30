@@ -7,12 +7,12 @@
 }
 
 #home {
+  background-color : white;
+  border: none;
+  font-size: 19px;
   cursor: pointer;
 }
 
-#header img {
-    height: 100%;
-}
 
 h2 {
     font-size: 30px;

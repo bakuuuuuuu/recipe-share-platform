@@ -1,4 +1,4 @@
-header {
+#header {
     background-color: white;
     padding: 10px;
     text-align: center;
@@ -6,13 +6,13 @@ header {
     border-bottom: 1px solid lightgray;
 }
 
-.header img {
-    height: 100%;
-}
 
-.home {
+#home {
+    background-color : white;
+    border: none;
+    font-size: 19px;
     cursor: pointer;
-}
+  }
 
 h2 {
     font-size: 30px;

@@ -3,7 +3,6 @@ import React from 'react';
 import { NavLink, Routes, Route } from 'react-router-dom';
 import LoginForm from './page/LoginForm';
 import SignUpForm from './page/SignUpForm';
-import MainPage from './page/MainPage';
 import Posts from './component/Posts';
 import EditProfile from './component/EditProfile';
 import {MyPage} from './page/MyPage';
