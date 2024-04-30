@@ -7,7 +7,7 @@ const categories = [
   { name: '양식', image: '../image/western.jpg' },
   { name: '중식', image: '../image/chinese.jpg' },
   { name: '일식', image: '../image/japanese.jpg' },
-  { name: '디저트', image: '../image/dessert.jpg' },
+  { name: '디저트', image: '../image/dessert.jpg' },//hjhjj
 ];
 
 const FoodCategory = () => {
