@@ -50,6 +50,19 @@ const LoginbtnStyles = {
     marginTop: "33px",
     marginLeft: "60%",
  },
+
+  //로그아웃버튼 styles
+  LogoutBtn : {
+    float:"right",
+    backgroundColor: "white",
+    fontSize: "13px",
+    border: "none",
+    color: "black",
+    position: "fixed", // 상단에 고정
+    top: 0, // 상단에 위치
+    marginTop: "33px",
+    marginLeft: "60%",
+  },
 };
 
 
@@ -83,7 +96,7 @@ function Search({ data }) {
       {/* 로그인 버튼 */}
       <a href='Logout'>
         <input
-          style={LoginbtnStyles.LoginBtn}
+          style={LoginbtnStyles.LogoutBtn}
           type="button"    
           value={"로그아웃"}
         />
