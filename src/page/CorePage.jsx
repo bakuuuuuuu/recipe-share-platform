@@ -149,7 +149,7 @@ const Popup = ({ handleClose, popupContent }) => {
 function CorePage(props) {
   // 이미지 슬라이드
   const imagesSlide = [
-    '/image/slide/slide1.png',
+    'src/image/slide/slide1.png',
     '/image/slide/slide2.png',
     '/image/slide/slide3.png',
   ];
