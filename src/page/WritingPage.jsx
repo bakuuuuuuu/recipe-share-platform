@@ -57,6 +57,10 @@ const WritingPage = () => {
         navigate('/');
     };
 
+    const handleHomeClick = () => {
+        navigate('/');
+    };
+
     const handleImageAddButtonClick = (e) => {
         e.preventDefault();  
         // 이미지 추가 버튼을 클릭할 때 파일 선택 창을 엽니다.
@@ -64,19 +68,17 @@ const WritingPage = () => {
     };
 
     return (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-            <div>
-                {/* Header 영역 */}
-                <header style={headerStyle}>
-                    <a href="https://naver.com" >
-                        <img src="https://recipe1.ezmember.co.kr/img/mobile/logo6.png" alt="로고" style={{ width: '150px' }} />
-                        {/* 사용자 프로필 이미지나 로그인/로그아웃 버튼 등을 추가할 수 있습니다. */}
-                    </a>
-                </header>
+        <div>
+            <div id="header">
+                <input type="button" id='home' onClick={handleHomeClick} value={"SimplyCook"} />
+            </div>
 
-                {/* 본문 영역 */}
-                <div style={{ ...CorepageStyles.centralContentStyle, marginTop: '50px' }}>
-                    <div style={{ ...CorepageStyles.sideContentStyle }}>{}</div>
+            {/* 본문 영역 */}
+            <div style={{ ...CorepageStyles.corePageStyle }}>
+                <div style={{ ...CorepageStyles.sideContentStyle }}> {/* 좌측 사이드 영역 */}
+                    {/* 여기에 좌측 사이드 영역의 내용을 추가하세요 */}
+                </div>
+                <div style={{ ...CorepageStyles.centralContentStyle, margin: '0 auto' }}> {/* 중앙 영역 */}
                     <h2 style={{ textAlign: 'center' }}>레시피</h2>
                     <form style={CorepageStyles.formStyle} onSubmit={handleSubmit}>
                         <input
@@ -133,18 +135,12 @@ const WritingPage = () => {
                         </div>
                     </form>
                 </div>
+                <div style={{ ...CorepageStyles.sideContentStyle }}> {/* 우측 사이드 영역 */}
+                    {/* 여기에 우측 사이드 영역의 내용을 추가하세요 */}
+                </div>
             </div>
         </div>
     );
-};
-
-const headerStyle = {
-    backgroundColor: '#ffffff',
-    color: '#fff',
-    padding: '10px',
-    textAlign: 'center',
-    position: 'fixed', // 헤더를 화면 상단에 고정
-    width: '47%', // 화면 전체 너비로 설정
 };
 
 export default WritingPage;
