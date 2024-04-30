@@ -2,7 +2,7 @@ import React from 'react';
 import FoodCategoryButton from '../page/FoodCategoryButton';
 
 const categories = [
-  { name: '전체', image: './../image/all.jpg' },
+  { name: '전체', image: './../image/ALL.jpg' },
   { name: '한식', image: '../image/korean.jpg' },
   { name: '양식', image: '../image/western.jpg' },
   { name: '중식', image: '../image/chinese.jpg' },
