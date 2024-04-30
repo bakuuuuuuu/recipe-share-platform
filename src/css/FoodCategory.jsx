@@ -34,7 +34,6 @@ const styles = {
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
-    maxWidth: '600px', // 최대 너비를 설정하여 한 줄에 3개까지만 표시하도록 함
     margin: 'auto'
   }
 };
