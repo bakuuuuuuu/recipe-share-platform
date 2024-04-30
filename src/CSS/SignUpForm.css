@@ -1,0 +1,71 @@
+header {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    height: 40px;
+    border-bottom: 1px solid lightgray;
+}
+
+.header img {
+    height: 100%;
+}
+
+.home {
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    margin: 40px;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+#body1 {
+    margin-bottom: 15px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 450px;
+    height: 170px;
+}
+
+#body2 {
+    margin-bottom: 15px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 450px;
+    height: 220px;
+}
+
+#id, #password, #email, #name, #phoneNumber, #gender, #category {
+    width: 400px;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid lightgray;
+    margin-left: 10px;
+}
+
+#submitbtn {
+    width: 450px;
+    height: 50px;
+    background-color: lightgreen;
+    border: 1px solid lightgreen;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submitbtn:hover {
+    background-color: limegreen;
+}
+
+.icon {
+    margin-left: 10px;
+}

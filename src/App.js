@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+//App.js
+import React from 'react';
+import {
+  Routes,
+  Route
+} from 'react-router-dom';
+import LoginForm from './LoginForm';
+import SignUpForm from './SignUpForm';
+import MainPage from './MainPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<MainPage />} /> {/* 회원가입 페이지 라우트 추가 */}
+      <Route path="/signup" element={<SignUpForm />} /> {/* 회원가입 페이지 라우트 추가 */}
+      <Route path="/login" element={<LoginForm />} /> {/* 로그인 페이지 라우트 추가 */}
+      {/* 필요에 따라 더 많은 라우트를 추가할 수 있습니다 */}
+    </Routes>
   );
 }
 

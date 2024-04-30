@@ -1,0 +1,96 @@
+#header {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    height: 40px;
+    border-bottom: 1px solid lightgray;
+}
+
+#home {
+  cursor: pointer;
+}
+
+#header img {
+    height: 100%;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+    margin: 40px;
+}
+
+#id, #password {
+    width: 284px;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+
+.body {
+    display: flex; /* 요소들을 가로로 배열하기 위해 flex 사용 */
+    flex-direction: row; /* 가로로 배열하도록 설정 */
+    align-items: center; /* 세로 정렬을 중앙으로 설정 */
+    justify-content: center; /* 가로 정렬을 중앙으로 설정 */
+  }
+  
+  .input-group {
+    margin-right: 10px; /* 입력칸 간의 간격 조절 */
+  }
+  
+  #logindiv {
+    margin: 50px;
+    text-align: center;
+  }
+
+  #loginbtn {
+    width: 150px;
+    height: 46px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  #loginbtn:hover {
+    background-color: #f0f0f0;
+  }
+
+  #sns {
+    margin: 20px;
+    text-align: center;
+  }
+
+  .snsbtn {
+    margin: 5px;
+  }
+
+  .snsdiv {
+    display: inline-block;
+    border: 1px solid lightgray;
+    border-radius: 100%;
+    width: 100px;
+    margin: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  .snsdiv:hover {
+    background-color: #f0f0f0;
+  }
+
+  #SignUp{
+    text-align: center;
+  }
+
+  a{
+    margin: 15px;
+    color: grey;
+    text-decoration: none;
+  }
+
+  
