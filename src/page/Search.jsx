@@ -42,7 +42,7 @@ const LoginbtnStyles = {
   LoginBtn : {
     float:"right",
     backgroundColor: "white",
-    fontSize: "13px",
+    fontSize: "10px",
     border: "none",
     color: "black",
     position: "fixed", // 상단에 고정
@@ -55,7 +55,7 @@ const LoginbtnStyles = {
   LogoutBtn : {
     float:"right",
     backgroundColor: "white",
-    fontSize: "13px",
+    fontSize: "10px",
     border: "none",
     color: "black",
     position: "fixed", // 상단에 고정
