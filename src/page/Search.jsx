@@ -42,7 +42,7 @@ const LoginbtnStyles = {
   LoginBtn : {
     float:"right",
     backgroundColor: "white",
-    fontSize: "13px",
+    fontSize: "10px",
     border: "none",
     color: "black",
     position: "fixed", // 상단에 고정
@@ -50,6 +50,19 @@ const LoginbtnStyles = {
     marginTop: "33px",
     marginLeft: "60%",
  },
+
+  //로그아웃버튼 styles
+  LogoutBtn : {
+    float:"right",
+    backgroundColor: "white",
+    fontSize: "10px",
+    border: "none",
+    color: "black",
+    position: "fixed", // 상단에 고정
+    top: 0, // 상단에 위치
+    marginTop: "33px",
+    marginLeft: "61%",
+  },
 };
 
 
@@ -80,6 +93,15 @@ function Search({ data }) {
         />
       </a>
 
+      {/* 로그인 버튼 */}
+      <a href='Logout'>
+        <input
+          style={LoginbtnStyles.LogoutBtn}
+          type="button"    
+          value={"로그아웃"}
+        />
+      </a>
+
       <div style={searchStyles.searchbar}>
         {/*상단 메인배너(홈링크 이동)*/}
         <a href='http://localhost:3000/'>
@@ -94,7 +116,7 @@ function Search({ data }) {
         <input
           type="text"
           value={query}
-          placeholder="요리 및 카테고리 검색"
+          placeholder="음식 카테고리 검색(ex 한식)"
           onChange={handleSearch}
           style={{ width: "30%", height: "40%", fontSize: 12, borderRadius: "10px", border: "1px solid black",}}
         />
