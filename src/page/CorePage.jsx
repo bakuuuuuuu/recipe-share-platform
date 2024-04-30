@@ -13,7 +13,7 @@ const CorepageStyles ={
   //중앙 영역 styles
   centralContentStyle: {
     width: "600px", // 중앙 컨텐츠의 너비를 100%로 설정하여 가로 전체 차지
-    height:"1600px",
+    height:"2000px",
     display: 'flex',
     flexDirection: 'column', // 자식 요소를 세로로 배치
     alignItems: 'center', // 가운데 정렬
@@ -23,7 +23,7 @@ const CorepageStyles ={
   sideContentStyle : {
     flex: '1', // 나머지 영역을 균등하게 나눔
     backgroundColor: 'lightgrey', // 사이드 회색 배경
-    height: "1600px", // 높이를 화면 전체로
+    height: "2000px", // 높이를 화면 전체로
     borderRight: "2px solid white",
     borderLeft: "2px solid white",
   },
