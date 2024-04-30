@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import CorepageStyless from './CorepageStyle';
+import CorepageStyless from './CorepageStyless';
 import { useNavigate } from 'react-router-dom';
 
 const WritingPage = () => {
