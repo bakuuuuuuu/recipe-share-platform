@@ -2,12 +2,12 @@ import React from 'react';
 import FoodCategoryButton from '../page/FoodCategoryButton';
 
 const categories = [
-  { name: '전체', image: './../image/ALL.jpg' },
-  { name: '한식', image: '../image/korean.jpg' },
-  { name: '양식', image: '../image/western.jpg' },
-  { name: '중식', image: '../image/chinese.jpg' },
-  { name: '일식', image: '../image/japanese.jpg' },
-  { name: '디저트', image: '../image/dessert.jpg' },//hjhjj
+  { name: '전체', image: 'image/all.jpg' },
+  { name: '한식', image: 'image/korean.jpg' },
+  { name: '양식', image: 'image/western.jpg' },
+  { name: '중식', image: 'image/chinese.jpg' },
+  { name: '일식', image: 'image/japanese.jpg' },
+  { name: '디저트', image: 'image/dessert.jpg' },//hjhjj
 ];
 
 const FoodCategory = () => {
