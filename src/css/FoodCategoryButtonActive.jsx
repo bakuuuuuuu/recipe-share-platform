@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
-import FoodCategoryButton from './FoodCategoryButton'; // FoodCategoryButton 컴포넌트 불러오기
+import FoodCategoryButton from './FoodCategoryButton'; // Importing FoodCategoryButton component
 
 const FoodCategoryButtonActive = ({ categories }) => {
   const [activeCategory, setActiveCategory] = useState(null);
 
   const handleClick = category => {
-    // 클릭한 카테고리가 이미 활성화된 경우 활성화 해제
-    if (activeCategory === category.name) {
-      setActiveCategory(null);
-    } else {
-      // 새 카테고리를 활성화
-      setActiveCategory(category.name);
-    }
+    // Toggle active category
+    setActiveCategory(current => current === category.name ? null : category.name);
   };
 
   return (

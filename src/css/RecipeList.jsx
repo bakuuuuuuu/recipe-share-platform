@@ -20,29 +20,35 @@ const RecipeList = ({ recipes }) => {
     },
     header: {
       display: 'flex',
-      justifyContent: 'space-between', // 제목은 왼쪽, 작성자는 오른쪽 정렬
+      justifyContent: 'space-between',
       width: '100%',
-      marginBottom: '10px', // 하단 컨텐츠와의 간격 조정
+      marginBottom: '10px',
     },
     title: {
-      textAlign: 'left', // 제목 왼쪽 정렬
+      textAlign: 'left',
     },
     author: {
-      textAlign: 'right', // 작성자 오른쪽 정렬
+      textAlign: 'right',
+    },
+    link: {
+      textDecoration: 'none', // 링크 밑줄 제거
+      color: 'inherit' // 링크 색상을 상속받도록 설정
     }
   };
 
   return (
     <div style={styles.recipeContainer}>
       {recipes.map(recipe => (
-        <div key={recipe.id} style={styles.recipe}>
-          <div style={styles.header}>
-            <div style={styles.title}>{recipe.category}</div> {/* 제목 위치에 카테고리를 표시 */}
-            <div style={styles.author}>작성자: {recipe.savedUserId}</div>
+        <a href={`/recipe/${recipe.id}`} style={styles.link} key={recipe.id}>
+          <div style={styles.recipe}>
+            <div style={styles.header}>
+              <div style={styles.title}>{recipe.category}</div>
+              <div style={styles.author}>작성자: {recipe.savedUserId}</div>
+            </div>
+            제목: {recipe.title}
+            <img src={recipe.imageUrl} alt={recipe.title} />
           </div>
-          제목: {recipe.title}{/* 카테고리 위치에 제목을 표시 */}
-          <img src={recipe.imageUrl} alt={recipe.title} />
-        </div>
+        </a>
       ))}
     </div>
   );
