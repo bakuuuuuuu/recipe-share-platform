@@ -1,6 +1,6 @@
 //하단 영역 jsx
 import React, { useState } from 'react';
-import {NavLink, Outlet} from 'react-router-dom';
+import {NavLink, Outlet, useLocation} from 'react-router-dom';
 
 const mainStyle = {
     width: "100%",
@@ -49,6 +49,15 @@ function UnderMenu(props) {
     // 선택된 버튼을 추적하는 상태
     const [selectedButton, setSelectedButton] = useState('HOME');
 
+    const location = useLocation();
+
+    const handleWritingPageClick = () => {
+        if(!props.currentData){
+            alert('로그인을 해야 접근 가능합니다');
+            return;
+        }
+        
+    }
     /*
     // MYPAGE 버튼 클릭 핸들러
     const handleMyPageClick = () => {
@@ -72,7 +81,7 @@ function UnderMenu(props) {
                     <NavLink to="/foodcategory" style={selectedButton === 'CATEGORY' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('CATEGORY')}>
                         CATEGORY
                     </NavLink>
-                    <NavLink to="/Writingpage" style={selectedButton === 'POSTING' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('POSTING')}>
+                    <NavLink to="/Writingpage" style={selectedButton === 'POSTING' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={!props.currentData ? null : handleWritingPageClick}>
                         POSTING
                     </NavLink>
                     <NavLink to="/mypage" style={selectedButton === 'MYPAGE' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('MYPAGE')}>
