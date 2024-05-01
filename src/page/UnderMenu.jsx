@@ -54,9 +54,9 @@ function UnderMenu(props) {
     const handleWritingPageClick = () => {
         if(!props.currentData){
             alert('로그인을 해야 접근 가능합니다');
-            return false;
+            return;
         }
-        return true;
+        
     }
     /*
     // MYPAGE 버튼 클릭 핸들러
@@ -81,7 +81,7 @@ function UnderMenu(props) {
                     <NavLink to="/foodcategory" style={selectedButton === 'CATEGORY' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('CATEGORY')}>
                         CATEGORY
                     </NavLink>
-                    <NavLink to="/Writingpage" style={selectedButton === 'POSTING' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={handleWritingPageClick}>
+                    <NavLink to="/Writingpage" style={selectedButton === 'POSTING' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={!props.currentData ? null : handleWritingPageClick}>
                         POSTING
                     </NavLink>
                     <NavLink to="/mypage" style={selectedButton === 'MYPAGE' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('MYPAGE')}>
