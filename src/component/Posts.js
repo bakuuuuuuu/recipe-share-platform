@@ -71,8 +71,9 @@ const style = {
 function Posts(props) {
     const currentUser = useContext(UserContext);
     const allPosts = JSON.parse(localStorage.getItem("recipes")) ?? new Array();
-    const currentUserPost = allPosts?.filter(postElement => postElement.savedUserId === currentUser.id);
+    const currentUserPost = allPosts?.filter(postElement => postElement?.savedUserId === currentUser.id);
     const [toShowPosts, setToShowPosts] = useState(currentUserPost);  // 모든 포스트가 아닌 해당 작성자가 쓴 글.
+
 
     // 글 삭제 이벤트 ( 삭제할 No )
     const onDeleteBtnClicked = (toDeleteNo) => {
@@ -95,7 +96,7 @@ function Posts(props) {
         console.log("삭제할 글");
         console.log(allPosts[deleteNo]);
 
-        delete allPosts[deleteNo];
+       allPosts.pop(deleteNo);
 
 
         // 삭제 후 저장 
