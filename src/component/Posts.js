@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../page/MyPage";
-import { json } from "react-router-dom";
 const style = {
     width: "50px",
     height: "50px",
@@ -71,28 +70,45 @@ const style = {
 
 function Posts(props) {
     const currentUser = useContext(UserContext);
-    const posts = JSON.parse(localStorage.getItem("recipes")) ?? new Array();
+    const allPosts = JSON.parse(localStorage.getItem("recipes")) ?? new Array();
+    const currentUserPost = allPosts?.filter(postElement => postElement?.savedUserId === currentUser.id);
+    const [toShowPosts, setToShowPosts] = useState(currentUserPost);  // 모든 포스트가 아닌 해당 작성자가 쓴 글.
 
 
-    const [postList, setPostList] = useState(posts);  // useState를 사용해 postList 상태 관리
+    // 글 삭제 이벤트 ( 삭제할 No )
+    const onDeleteBtnClicked = (toDeleteNo) => {
 
-    const onDeleteBtnClicked = (id) => {
-        const updatedPosts = postList?.filter(post => post.user !== id);
-        setPostList(updatedPosts);
-        localStorage.setItem("recipes",JSON.stringify(postList));
+        // 사용자 화면에서 글 삭제
+        const updatedPost = toShowPosts.filter(post => toDeleteNo !== post.No);
+        setToShowPosts(updatedPost);
+
+        let deleteNo = -1;
+        // 전체 글에서 해당 글 삭제
+        for(let i =0; i<allPosts.length; i++){
+          if(allPosts[i].No !== toDeleteNo) continue;
+          deleteNo = i;
+        }
+
+        // 글 삭제
+        if(deleteNo === -1){
+          console.log("[Post] 글 삭제 오류) 해당 아이디에 존재하는 글을 찾을 수 없음.");
+        } 
+        console.log("삭제할 글");
+        console.log(allPosts[deleteNo]);
+
+       allPosts.pop(deleteNo);
+
+
+        // 삭제 후 저장 
+        localStorage.setItem("recipes",JSON.stringify(allPosts));
     };
-
-    useEffect(() => {
-        // 변경 예정 currentUser.id?
-        setPostList(postList.filter(post => post.savedUserId === currentUser.id));
-    }, [])
 
     return <div>
         <h2>내가 쓴 글 불러오기</h2>
 
 
         <ul style={style.ul}>
-            {postList?.map(value => {
+            {toShowPosts?.map(value => {
                 return (<li key={value.No} style={style.li}>
                     <div style={style.rowContainer}>
                         <img style={style.image} src={value.imageUrl ?? '/image/empty_image.jpg'} alt={"image"} />
@@ -104,7 +120,7 @@ function Posts(props) {
                     </div>
                 </li>)
             })}
-            {(postList === null || postList?.length === 0) &&
+            {(toShowPosts === null || toShowPosts?.length === 0) &&
                 (<>
                     <div style={style.noItem}>
                         <span className="material-symbols-outlined" style={style.noItemIco}>priority_high</span>
