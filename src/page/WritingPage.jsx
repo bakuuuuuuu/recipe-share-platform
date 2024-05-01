@@ -31,11 +31,17 @@ const WritingPage = () => {
         console.log('이미지:', image);
         console.log('카테고리:', category);
 
-        const savedUserData = JSON.parse(localStorage.getItem('userData'));
+        const savedUserData = JSON.parse(localStorage.getItem('currentData'));
         const savedUserId = savedUserData ? savedUserData.id : '';
 
-        const No = noCounter.toString();
-        setNoCounter(noCounter + 1);
+        const posts = JSON.parse(localStorage.getItem("recipes")) ?? new Array();
+
+        const storedRecipes = JSON.parse(localStorage.getItem('recipes')) ?? [];
+        const No = storedRecipes.length > 0 ? Math.max(...storedRecipes.map(recipe => recipe.No)) + 1 : 1;
+
+       
+        
+
 
         // 작성된 정보를 로컬 스토리지에 저장
         const recipe = {
@@ -46,9 +52,9 @@ const WritingPage = () => {
             category,
             imageUrl: image ? URL.createObjectURL(image) : null,
         };
-        const storedRecipes = localStorage.getItem('recipes');
-        const recipes = storedRecipes ? JSON.parse(storedRecipes) : [];
-        recipes.push(recipe);
+       
+        const recipes = [...storedRecipes,recipe];
+        
         localStorage.setItem('recipes', JSON.stringify(recipes));
 
         // 저장 후 입력 내용 초기화

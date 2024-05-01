@@ -55,21 +55,6 @@ const LoginbtnStyles = {
  },
 };
 
-const searchbtnStyles = {
-  // 검색 버튼 styles
-  LoginBtn: {
-    float: "right",
-    backgroundColor: "white",
-    border: "none",
-    color: "black",
-    position: "fixed", // 상단에 고정
-    top: 0, // 상단에 위치
-    marginTop: "25px",
-    marginLeft: "45%",
-  },
-};
-
-
 function Search({ data }) {
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -86,13 +71,14 @@ function Search({ data }) {
   const handleSearch = (e) => {
     const searchTerm = e.target.value;
     setQuery(searchTerm);
-
+  
     const results = data.filter(item =>
       item.toLowerCase().includes(searchTerm.toLowerCase())
     );
-
+  
     setSearchResults(results);
   };
+  
      
 
   const handleLoginClick = () => {
@@ -109,6 +95,13 @@ function Search({ data }) {
     window.location.href= '/foodcategory'; // 이동할 경로를 '/CATEGORY'로 설정
   };
   
+   // 카테고리 필터링 함수
+   const filterCategory = (searchResults) => {
+    return searchResults.filter(item =>
+      ['전체','한식', '양식', '중식', '일식', '디저트'].includes(item)
+    );
+  };
+
   return (
     <div style={searchStyles.searchContainer}>
         
@@ -127,7 +120,7 @@ function Search({ data }) {
           <input
             type="text"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={handleSearch}
             placeholder="음식 카테고리 검색(ex 한식)"
             style={{ width: "30%", height: "40%", fontSize: 12, borderRadius: "10px", border: "1px solid black",}}
             onClick={handleSearchBarClick}
@@ -142,8 +135,8 @@ function Search({ data }) {
           </button>
         </div>
         <ul style={{ overflowY: "scroll", width: "10%", height: "50%", textAlign: "left", listStyle: "none", padding: 0, border:"none"}}>
-          {searchResults.map((item, index) => (
-            <li key={index}>{item}</li>
+          {filterCategory(searchResults).map((item, index) => (
+             <li key={index}>{item}</li>
           ))}
         </ul>
         
