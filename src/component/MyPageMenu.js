@@ -18,13 +18,12 @@ const adminMenu = [
 ];
 function MyPageMenu() {
     const user = useContext(UserContext); 
-    console.log(user);
     return (
         <div>
             <h3>프로필</h3>
             <Profile
                 src={sampleThumbNail}
-                name={user.name}
+                name={user?.name}
                 className="bottom-border"
             />
 
