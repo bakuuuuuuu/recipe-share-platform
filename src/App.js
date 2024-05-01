@@ -11,6 +11,7 @@ import FoodCategory from './css/FoodCategory';
 import Main from './page/Main';
 import UnderMenu from './page/UnderMenu';
 import { initUesrData } from './domain/userData';
+import EditAllPostPage from './component/EditAllPostPage';
 
 
 // git test

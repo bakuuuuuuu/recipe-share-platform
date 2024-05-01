@@ -68,7 +68,7 @@ const style = {
 }
 
 
-function EditAllPostPage()(props) {
+function EditAllPostPage(props) {
     const currentUser = useContext(UserContext);
     const allPosts = JSON.parse(localStorage.getItem("recipes")) ?? new Array();
     const currentUserPost = allPosts?.filter(postElement => postElement?.savedUserId === currentUser.id);
