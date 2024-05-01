@@ -36,20 +36,7 @@ const searchStyles = {
     border: 'none',
     fontSize: "16px",
   },
-};
-
-const searchbtnStyles = {
-  // 검색 버튼 styles
-  LoginBtn: {
-    float: "right",
-    backgroundColor: "white",
-    border: "none",
-    color: "black",
-    position: "fixed", // 상단에 고정
-    top: 0, // 상단에 위치
-    marginTop: "25px",
-    marginLeft: "45%",
-  },
+  
 };
 
 const LoginbtnStyles = {
@@ -138,9 +125,9 @@ function Search({ data }) {
             style={{ width: "30%", height: "40%", fontSize: 12, borderRadius: "10px", border: "1px solid black",}}
           />
           {/* 검색 버튼 추가 */}
-          <button onClick={handleSearch} style={searchbtnStyles.searchBtn}>
+          {/* <button onClick={handleSearch} style={searchbtnStyles.searchBtn}>
           <img src='SimplyCooklogo.png' alt="logo" style={{width: "10px", height:"10px"}}/>
-          </button>
+          </button> */}
           
           {/* 로그인 버튼 */}
           <button
