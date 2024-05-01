@@ -10,9 +10,11 @@ import WritingPage from './page/WritingPage';
 import FoodCategory from './css/FoodCategory';
 import Main from './page/Main';
 import UnderMenu from './page/UnderMenu';
-
+import { initUesrData } from './domain/userData';
 // git test
 function App() {
+  initUesrData();
+
   return (<>
 
     <Routes>
