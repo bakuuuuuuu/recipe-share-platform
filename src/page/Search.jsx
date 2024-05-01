@@ -10,7 +10,7 @@ const searchStyles = {
     alignItems: "center", // 세로 방향으로 가운데 정렬
     borderBottom: "3px solid white",
     width: "100%",
-    height: 60,
+    height: 50,
     position: "fixed", // 상단에 고정
     top: 0, // 상단에 위치
     backgroundColor: "white", // 검색창 밖의 배경을 하얀색으로 설정합니다.
@@ -47,8 +47,8 @@ const LoginbtnStyles = {
     color: "black",
     position: "fixed", // 상단에 고정
     top: 0, // 상단에 위치
-    marginTop: "33px",
-    marginLeft: "60%",
+    marginTop: "25px",
+    marginLeft: "59%",
  },
 };
 
@@ -86,9 +86,8 @@ function Search({ data }) {
 
            <input
             style={searchStyles.mainbanner}
-            type="button"    
-            value={"SimplyCook"}
-          />
+            type="button"
+          /><img src='SimplyCooklogo.png' style={{width: "80px", height:"70px"}}/>
         </a>
         
         <input
@@ -100,7 +99,7 @@ function Search({ data }) {
         />
 
       </div>
-      <ul style={{ overflowY: "scroll", width: "10%", height: "50%", textAlign: "left", listStyle: "none", padding: 0 }}>
+      <ul style={{ overflowY: "scroll", width: "10%", height: "50%", textAlign: "left", listStyle: "none", padding: 0, border:"none"}}>
         {searchResults.map((item, index) => (
           <li key={index}>{item}</li>
         ))}

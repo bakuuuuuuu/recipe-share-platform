@@ -16,7 +16,7 @@ const UnderMenuStyles = {
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
-        height: 60,
+        height: 40,
         position: "fixed",
         bottom: 0,
         backgroundColor: "white",
