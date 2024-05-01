@@ -50,7 +50,8 @@ const LoginbtnStyles = {
     position: "fixed", // 상단에 고정
     top: 0, // 상단에 위치
     marginTop: "24px", 
-    marginLeft: "4px",
+    marginLeft: "450px",
+    
  },
 };
 
@@ -112,13 +113,12 @@ function Search({ data }) {
             style={{ width: "30%", height: "50%", fontSize: 12, borderRadius: "5px", border: "1px solid black", marginLeft:"5px"}}
           />
           {/* 로그인 버튼 */}
-          <a href='Login'>
-            <input
-              style={LoginbtnStyles.LoginBtn}
-              type="button"    
-              value={"로그인"}
-            />
-          </a>
+          <button
+             style={LoginbtnStyles.LoginBtn}
+             onClick={handleLoginClick}
+           >
+            {isLoggedIn ? "로그아웃" : "로그인" }
+          </button>
         </div>
         <ul style={{ overflowY: "scroll", width: "10%", height: "50%", textAlign: "left", listStyle: "none", padding: 0, border:"none"}}>
           {searchResults.map((item, index) => (
