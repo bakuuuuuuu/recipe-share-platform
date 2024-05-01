@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import FoodCategoryButton from '../page/FoodCategoryButton';
 import Search from '../page/Search';
 import UnderMenu from '../page/UnderMenu';
+import RecipeList from './RecipeList'; // 레시피 리스트 컴포넌트 불러오기
 
 const categories = [
   { name: '전체', image: 'image/all.jpg' },
@@ -12,17 +13,17 @@ const categories = [
   { name: '디저트', image: 'image/dessert.jpg' },
 ];
 
-const FoodCategoryMenu = () => {
+const FoodCategory = () => {
   const [recipes, setRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
 
-  // 로컬 스토리지에서 레시피를 가져와서 저장합니다.
   useEffect(() => {
+    // 로컬 스토리지에서 레시피를 불러옵니다.
     const storedRecipes = JSON.parse(localStorage.getItem('recipes'));
     setRecipes(storedRecipes || []);
   }, []);
 
-  // 선택한 카테고리에 해당하는 레시피를 필터링합니다.
+  // 카테고리 이름에 따라 레시피를 필터링하는 함수
   const filterRecipesByCategory = (categoryName) => {
     if (categoryName === '전체') {
       setFilteredRecipes(recipes);
@@ -32,15 +33,27 @@ const FoodCategoryMenu = () => {
     }
   };
 
+  // 카테고리 버튼 클릭 시 실행되는 함수
   const handleClick = (categoryName) => {
     console.log(`${categoryName} was clicked`);
     filterRecipesByCategory(categoryName);
   };
 
+  // 컨테이너 스타일
+  const styles = {
+    container: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+      alignItems: 'center',
+      margin: 'auto',
+    }
+  };
+
   return (
     <div>
+      <Search />
       <div style={styles.container}>
-        <Search></Search>
         {categories.map(category => (
           <FoodCategoryButton
             key={category.name}
@@ -49,45 +62,10 @@ const FoodCategoryMenu = () => {
           />
         ))}
       </div>
-      <div style={styles.recipeContainer}>
-        {/* 각각의 필터링된 레시피에 border를 추가합니다 */}
-        {filteredRecipes.map(recipe => (
-          <div key={recipe.id} style={styles.recipe}>
-            <p>작성자 : {recipe.id}</p>
-            <p>카테고리 : {recipe.category}</p>
-            <p>제목 : {recipe.title}</p>
-            <p>내용 : {recipe.content}</p>
-            <img src={recipe.imageUrl} alt={recipe.title} />
-          </div>
-        ))}
-      </div>
+      <RecipeList recipes={filteredRecipes} />
       <UnderMenu />
     </div>
   );
 };
 
-const styles = {
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 'auto'
-  },
-  recipeContainer: {
-    display: 'grid',
-    gap: '20px',
-    padding: '20px',
-    border: '1px solid #ccc',
-    borderRadius: '10px'
-  },
-  recipe: {
-    display: 'flex', // 세로로 정렬하기 위해 flex로 설정합니다.
-    flexDirection: 'column', // 세로 방향으로 배치합니다.
-    border: '1px solid #ccc',
-    padding: '10px',
-    borderRadius: '5px'
-  }
-};
-
-export default FoodCategoryMenu;
+export default FoodCategory;
