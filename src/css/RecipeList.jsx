@@ -46,11 +46,10 @@ const RecipeList = ({ recipes }) => {
         <a href={`/recipe/${recipe.id}`} style={styles.link} key={recipe.id}>
           <div style={styles.recipe}>
             <div style={styles.header}>
-              <div style={styles.title}>{recipe.category}</div>
+              <div style={styles.category}>{recipe.category}</div>
               <div style={styles.author}>작성자: {recipe.savedUserId}</div>
             </div>
-            제목: {recipe.title}
-            <img src={recipe.imageUrl} alt={recipe.title} />
+            <div style={styles.title}> 제목: {recipe.title} </div>
           </div>
         </a>
       ))}
