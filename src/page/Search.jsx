@@ -79,17 +79,15 @@ function Search({ data }) {
   };
      
 
-    
-
-    const handleLoginClick = () => {
+  const handleLoginClick = () => {
       if(isLoggedIn){
-        localStorage.removeItem('currentData');
-        setIsLoggedIn(false);
-        window.location.href= '/';
-      }else {
-        window.location.href='/login';
-      }
-    };
+      localStorage.removeItem('currentData');
+      setIsLoggedIn(false);
+      window.location.href= '/';
+    }else {
+      window.location.href='/login';
+    }
+  };   
   
   return (
     <div style={searchStyles.searchContainer}>
