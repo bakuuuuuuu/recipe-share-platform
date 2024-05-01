@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { posts } from "../domain/posts";
-
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../page/MyPage";
+import { json } from "react-router-dom";
 const style = {
     width: "50px",
     height: "50px",
@@ -70,15 +70,21 @@ const style = {
 
 
 function Posts(props) {
-    const [postList, setPostList] = useState([]);  // useState를 사용해 postList 상태 관리
+    const currentUser = useContext(UserContext);
+    const posts = JSON.parse(localStorage.getItem("recipes"));
+
+
+    const [postList, setPostList] = useState(posts);  // useState를 사용해 postList 상태 관리
 
     const onDeleteBtnClicked = (id) => {
-        const updatedPosts = postList.filter(post => post.id !== id);
+        const updatedPosts = postList.filter(post => post.No !== id);
         setPostList(updatedPosts);
+        localStorage.setItem("recipes",JSON.stringify(postList));
     };
 
     useEffect(() => {
-        setPostList(posts.filter(value => value.author === "!강철새잎"));
+        // 변경 예정 currentUser.id?
+        setPostList(postList.filter(post => post.savedUserId === currentUser.id));
     }, [])
 
     return <div>
@@ -87,18 +93,18 @@ function Posts(props) {
 
         <ul style={style.ul}>
             {postList?.map(value => {
-                return (<li key={value.id} style={style.li}>
+                return (<li key={value.No} style={style.li}>
                     <div style={style.rowContainer}>
-                        <img style={style.image} src={value.thumbnail} alt={"image"} />
+                        <img style={style.image} src={value.imageUrl ?? '/image/empty_image.jpg'} alt={"image"} />
                         <div style={style.columnContainer}>
                             <p style={{ ...style.title, ...style.oneLineText }}>{value.title}</p>
-                            <p style={{ ...style.subtitle, ...style.oneLineText }}>{value.subtitle}</p>
+                            <p style={{ ...style.subtitle, ...style.oneLineText }}>{value.content}</p>
                         </div>
-                        <button style={style.button} onClick={() => { onDeleteBtnClicked(value.id) }}>삭제하기</button>
+                        <button style={style.button} onClick={() => { onDeleteBtnClicked(value.No) }}>삭제하기</button>
                     </div>
                 </li>)
             })}
-            {postList.length === 0 &&
+            {(postList === null || postList?.length === 0) &&
                 (<>
                     <div style={style.noItem}>
                         <span className="material-symbols-outlined" style={style.noItemIco}>priority_high</span>

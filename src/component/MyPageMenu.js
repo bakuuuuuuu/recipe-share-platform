@@ -1,7 +1,7 @@
 import MenuElement from "./MenuElement";
 import Profile from "./Profile";
 import { useContext } from "react";
-import { MyContext } from "../page/MyPage";
+import { UserContext } from "../page/MyPage";
 
 const sampleThumbNail = "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/24e953b920a9cd0ff2e1d587742a2472/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg"
 
@@ -17,14 +17,13 @@ const adminMenu = [
     { title: "회원 정보 수정", ico: "manage_accounts", link: "./myAcount" },
 ];
 function MyPageMenu() {
-    const user = JSON.parse(useContext(MyContext)); 
-    console.log(user);
+    const user = useContext(UserContext); 
     return (
         <div>
             <h3>프로필</h3>
             <Profile
                 src={sampleThumbNail}
-                name={user.name}
+                name={user?.name}
                 className="bottom-border"
             />
 

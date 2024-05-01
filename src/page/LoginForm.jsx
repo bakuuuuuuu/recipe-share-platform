@@ -46,8 +46,8 @@ const LoginForm = () => {
 
             // 로그인 성공 시 MainPage로 이동합니다.
             navigate('/'); // 사용자 정보를 상태로 전달
-            // 여기서는 사용자의 id만 저장합니다. (현재 로그인한 사용자를 식별하기 위해 currentData에 로그인 때 사용한 사용자 객체의 id를 로컬 스토리지에 저장시킴)
-            localStorage.setItem('currentData', JSON.stringify({ id: inputId }));
+            // 로그인한 사용자의 정보를 currentData에 저장(currentData는 현재 로그인한 사용자)
+            localStorage.setItem('currentData', JSON.stringify({ userData }));
 
         } else {
             // 로그인 실패 시 알림을 표시합니다.
