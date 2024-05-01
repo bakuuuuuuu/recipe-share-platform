@@ -118,7 +118,9 @@ function Search({ data }) {
               type="button"    
               value={"로그인"}
             />
+            
           </a>
+          
         </div>
         <ul style={{ overflowY: "scroll", width: "10%", height: "50%", textAlign: "left", listStyle: "none", padding: 0, border:"none"}}>
           {searchResults.map((item, index) => (
