@@ -18,6 +18,7 @@ const CorepageStyles ={
     display: 'flex',
     flexDirection: 'column', // 자식 요소를 세로로 배치
     alignItems: 'center', // 가운데 정렬
+    paddingTop:"83",
   },
   
   //사이드 영역 styles
