@@ -12,6 +12,7 @@ import Main from './page/Main';
 import UnderMenu from './page/UnderMenu';
 import { initUesrData } from './domain/userData';
 import EditAllPostPage from './component/EditAllPostPage';
+import UserEditForm from './page/UserEditForm';
 
 
 // git test
@@ -36,6 +37,7 @@ function App() {
         <Route path="posts" element={<Posts />} />
         <Route path="EditProfile" element={<EditProfile />} />
         <Route path="editAllPostPage" element={<EditAllPostPage />} />
+        <Route path="userEditForm" element={<UserEditForm />} />
       </Route>
       </Route>  
     </Routes>
