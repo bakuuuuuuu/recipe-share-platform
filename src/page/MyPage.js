@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
 import '../css/MyPage.css'
 import { Outlet, useOutlet } from 'react-router-dom'
 import MyPageMenu from '../component/MyPageMenu';
@@ -6,9 +6,19 @@ import MyPageMenu from '../component/MyPageMenu';
 export const MyContext = createContext(null);
 
 export const MyPage = () => {
+
+    [currentUser, setCurrentUser] = useState(null);
+
+    useEffect(()=>{
+        setCurrentUser(localStorage.getItem("userData"));
+        if(currentUser == null){
+            <Navigate to={"/login"} replace state={redirectedFrom:useLocation()}/>
+        }
+    },[])
+
+
     const hasOutlet = useOutlet() !== null;
     const [title, setTitle] = useState("마이페이지");  
-    const userData = localStorage.getItem("userData");
 
     return (
         <div className='background'>
