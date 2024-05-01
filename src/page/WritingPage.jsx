@@ -11,7 +11,7 @@ const WritingPage = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const savedUserData = JSON.parse(localStorage.getItem('userData'));
+    const savedUserData = JSON.parse(localStorage.getItem('currentData'));
 
     if (!savedUserData) {
         return <Navigate to="/login" replace state={{ redirectedFrom: location }} />;
@@ -31,7 +31,7 @@ const WritingPage = () => {
         console.log('이미지:', image);
         console.log('카테고리:', category);
 
-        const savedUserData = JSON.parse(localStorage.getItem('currentData'));
+        const savedUserData = JSON.parse(localStorage.getItem('userData'));
         const savedUserId = savedUserData ? savedUserData.id : '';
 
         const No = noCounter.toString();
