@@ -1,4 +1,4 @@
-//검색기능을 포함한 상단영역 jsx
+//검색기능을 포함한 상단영역 jsx 원본 
 import React, { useEffect, useState } from 'react';
 
 const searchStyles = {
@@ -98,7 +98,7 @@ function Search({ data }) {
    // 카테고리 필터링 함수
    const filterCategory = (searchResults) => {
     return searchResults.filter(item =>
-      ['전체','한식', '양식', '중식', '일식', '디저트'].includes(item)
+      ['전체','한식', '양식', '중식', '일식', '디저트'].includes()
     );
   };
 
@@ -145,3 +145,4 @@ function Search({ data }) {
 };
 
 export default Search;
+
