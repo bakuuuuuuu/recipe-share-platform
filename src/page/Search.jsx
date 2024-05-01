@@ -1,5 +1,5 @@
 //검색기능을 포함한 상단영역 jsx
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const searchStyles = {
   //전체적인 styles
@@ -48,7 +48,7 @@ const LoginbtnStyles = {
     position: "fixed", // 상단에 고정
     top: 0, // 상단에 위치
     marginTop: "22px",
-    marginLeft: "59%",
+    marginLeft: "25%",
  },
 };
 
@@ -56,7 +56,14 @@ const LoginbtnStyles = {
 function Search({ data }) {
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-
+ 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
+  useEffect(() => {
+    const currentData = localStorage.getItem('currentData');
+    setIsLoggedIn(currentData !== null);
+  }, []);
+  
   const handleSearch = (e) => {
     const searchTerm = e.target.value;
     setQuery(searchTerm);
@@ -67,18 +74,30 @@ function Search({ data }) {
 
     setSearchResults(results);
   };
+     
 
+    
+
+    const handleLoginClick = () => {
+      if(isLoggedIn){
+        localStorage.removeItem('currentData');
+        setIsLoggedIn(false);
+        window.location.href= '/';
+      }else {
+        window.location.href='/login';
+      }
+    };
+  
   return (
     <div style={searchStyles.searchContainer}>
 
       {/* 로그인 버튼 */}
-      <a href='Login'>
-        <input
-          style={LoginbtnStyles.LoginBtn}
-          type="button"    
-          value={"로그인"}
-        />
-      </a>
+      <button
+        style={LoginbtnStyles.LoginBtn}
+        onClick={handleLoginClick}
+      >
+        {isLoggedIn ? "로그아웃" : "로그인"}  
+      </button>
 
       <div style={searchStyles.searchbar}>
         {/*상단 메인배너(홈링크 이동)*/}
