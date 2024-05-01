@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../page/MyPage";
+import { height } from "@fortawesome/free-solid-svg-icons/fa0";
 const style = {
     width: "50px",
     height: "50px",
@@ -25,6 +26,7 @@ const style = {
     columnContainer: {
         paddingLeft: "20px",
         display: "flex",
+        height: "100px",
         flexDirection: "column",
         justifyContent: "center",
     },
@@ -32,14 +34,26 @@ const style = {
         width: "120px",
         height: "100px",
     },
+    author: {
+      fontSize : "10px",
+      height : "20px",
+      flex: 1,
+      margin: 0,
+    },
+
     title: {
-        fontSize: "14px",
+      flex: 1,
+        fontSize: "20px",
         color: "rgb(45,45,45)",
         fontWeight: "700",
+      margin: 0,
+        
         width: "200px",
     },
     subtitle: {
-        fontSize: "11px",
+      margin: 0,
+      
+        fontSize: "15px",
         color: "rgb(153,153,153)",
         width: "300px",
     },
@@ -79,7 +93,7 @@ function EditAllPostPage(props) {
 
         // 사용자 화면에서 글 삭제
         const updatedPost = toShowAllPosts.filter(post => toDeleteNo !== post.No);
-        toShowAllPosts(updatedPost);
+        setToShowAllPosts(updatedPost);
 
         let deleteNo = -1;
         // 전체 글에서 해당 글 삭제
@@ -110,6 +124,7 @@ function EditAllPostPage(props) {
                     <div style={style.rowContainer}>
                         <img style={style.image} src={value.imageUrl ?? '/image/empty_image.jpg'} alt={"image"} />
                         <div style={style.columnContainer}>
+                        <p style={{ ...style.author, ...style.oneLineText }}>{"작성자:".concat(value.savedUserId)}</p>
                             <p style={{ ...style.title, ...style.oneLineText }}>{value.title}</p>
                             <p style={{ ...style.subtitle, ...style.oneLineText }}>{value.content}</p>
                         </div>
