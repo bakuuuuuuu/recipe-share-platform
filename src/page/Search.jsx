@@ -112,14 +112,15 @@ function Search({ data }) {
   return (
     <div style={searchStyles.searchContainer}>
         
-        <div style={searchStyles.searchbar} onClick={handleSearchBarClick}>
+        <div style={searchStyles.searchbar} >
           {/*상단 메인배너(홈링크 이동)*/}
+          
           <a href='http://localhost:3000/'>
-
             <input
               style={searchStyles.mainbanner}
               type="button"
               value={"SimplyCook"}
+              
             />
           </a>
           
@@ -129,13 +130,8 @@ function Search({ data }) {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="음식 카테고리 검색(ex 한식)"
             style={{ width: "30%", height: "40%", fontSize: 12, borderRadius: "10px", border: "1px solid black",}}
+            onClick={handleSearchBarClick}
           />
-
-
-          {/* 검색 버튼 추가 */}
-          {/* <button onClick={handleSearch} style={searchbtnStyles.searchBtn}>
-          <img src='SimplyCooklogo.png' alt="logo" style={{width: "10px", height:"10px"}}/>
-          </button> */}
           
           {/* 로그인 버튼 */}
           <button
