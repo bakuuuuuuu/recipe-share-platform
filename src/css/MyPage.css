@@ -4,6 +4,8 @@
     background-color: #f1f1f2;
     width: 100%;
     height: 100vh;
+    min-height: 1200px;
+
 }
 
 h1 {
@@ -11,7 +13,8 @@ h1 {
 }
 
 .MyPage {
-    width: 640px;   
+    width: 640px;
+    min-height: 1200px;
 }
 
 ul {

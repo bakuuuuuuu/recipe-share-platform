@@ -12,35 +12,36 @@ import UnderMenu from './page/UnderMenu';
 import { initUesrData } from './domain/userData';
 import EditAllPostPage from './component/EditAllPostPage';
 import UserEditForm from './page/UserEditForm';
+import { initPostData } from './domain/postData';
 
 
 // git test
 function App() {
   initUesrData();
-
+  initPostData();
   return (<>
 
     <Routes>
-    <Route path="/login" element={<LoginForm />} /> {/* 로그인 페이지 라우트 추가 */}
-    <Route path="/signup" element={<SignUpForm />} /> {/* 회원가입 페이지 라우트 추가 */}
-  
+      <Route path="/login" element={<LoginForm />} /> {/* 로그인 페이지 라우트 추가 */}
+      <Route path="/signup" element={<SignUpForm />} /> {/* 회원가입 페이지 라우트 추가 */}
 
-    <Route element={<UnderMenu/>}>
-      {/* 필요에 따라 더 많은 라우트를 추가할 수 있습니다 */}
-      <Route path="/" element={<Main />} /> {/* 회원가입 페이지 라우트 추가 */}
-      <Route path='/foodcategory' element={<FoodCategory/>} /> 
-      <Route path='/Writingpage' element={<WritingPage/>} /> 
 
-      {/* 마이페이지 추가*/}
-      <Route path="/mypage" element={<MyPage />}>
-        <Route path="posts" element={<Posts />} />
-        <Route path="EditProfile" element={<EditProfile />} />
-        <Route path="editAllPostPage" element={<EditAllPostPage />} />
-        <Route path="userEditForm" element={<UserEditForm />} />
+      <Route element={<UnderMenu />}>
+        {/* 필요에 따라 더 많은 라우트를 추가할 수 있습니다 */}
+        <Route path="/" element={<Main />} /> {/* 회원가입 페이지 라우트 추가 */}
+        <Route path='/foodcategory' element={<FoodCategory />} />
+        <Route path='/Writingpage' element={<WritingPage />} />
+
+        {/* 마이페이지 추가*/}
+        <Route path="/mypage" element={<MyPage />}>
+          <Route path="posts" element={<Posts />} />
+          <Route path="EditProfile" element={<EditProfile />} />
+          <Route path="editAllPostPage" element={<EditAllPostPage />} />
+          <Route path="userEditForm" element={<UserEditForm />} />
+        </Route>
       </Route>
-      </Route>  
     </Routes>
-</>
+  </>
   );
 }
 
