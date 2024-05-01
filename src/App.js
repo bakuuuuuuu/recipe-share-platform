@@ -11,7 +11,7 @@ import FoodCategory from './css/FoodCategory';
 import Main from './page/Main';
 import UnderMenu from './page/UnderMenu';
 import { initUesrData } from './domain/userData';
-import AdminPage from './page/AdminPage';
+
 // git test
 function App() {
   initUesrData();
@@ -21,7 +21,6 @@ function App() {
     <Routes>
     <Route path="/login" element={<LoginForm />} /> {/* 로그인 페이지 라우트 추가 */}
     <Route path="/signup" element={<SignUpForm />} /> {/* 회원가입 페이지 라우트 추가 */}
-    <Route path='/adminhome' element={<AdminPage/>} /> {/*관리자 홈 화면 라우트 추가*/}
 
 
     <Route element={<UnderMenu/>}>
