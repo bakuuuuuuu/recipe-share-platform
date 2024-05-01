@@ -1,45 +1,36 @@
 import { useContext } from "react";
 import { UserContext } from "../page/MyPage";
+import { EditComponant } from "./EditComponant";
 
 const style = {
-
-  container : {
+  colContainer : {
     display : "flex",
     flexDirection : "column",
-    backgroundColor : "white",
-    borderRadius : "12px",
-  },
-  title : {
-    fontWeight: 500,
-    fontSize: "14px",
-  },
-  subtitleContainer : {
+  
+    buttonStyle : {
+      alignSelf : "end",
+    }
   },
 
-  subtitle : {
-    fontFamily: `"Noto Sans KR", sans-serif;`, 
-    marginLeft : "10px",
-    display: "block",
-    height : "20px",
-    backgroundColor : "rgb(219,233,244)",
-    border: "1px solid blue",
-    fontSize : "13px",
-  },
-}
+
+};
 
 function EditProfile() {
   const currentUser = useContext(UserContext);
-  console.log(currentUser)
-  return (<>
-    <h3>회원 정보 수정</h3>
-    <div style={style.container}>
-      <p style={style.title}> 프로필 이름 설정 </p>
-      <div style={style.subtitleContainer}>
-      <input style={style.subtitle}/> 
-      </div>
-    </div>
+
+  const onEdithandle = (event)=>{
+
+  }
     
-  </>)
+  return (<div>
+    <EditComponant title={"아이디"} value={currentUser.id}/>  
+    <EditComponant title={"비밀번호"} value={currentUser.password}/>  
+    <EditComponant title={"카테고리"} value={currentUser.category}/>  
+    <EditComponant title={"성별"} value={currentUser.gender}/>  
+    <EditComponant title={"전화번호"} value={currentUser.phoneNumber}/>  
+  
+    <button onClick={onEdithandle} style={style.buttonStyle}>수정하기</button>
+  </div>)
 }
 
 export default EditProfile;
