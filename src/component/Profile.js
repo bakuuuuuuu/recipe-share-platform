@@ -19,7 +19,7 @@ const profileStyle = {
 
 function Profile(props) {
     const { src, name } = props;
-    
+    console.log(name);
     return (<div className="Profile" style={profileStyle}>
         <img style={imageStyle} src={src} alt="userProfileImage"></img>
         <span style={profileStyle.userNameStyle}>{name}</span>

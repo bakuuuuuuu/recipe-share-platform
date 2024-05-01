@@ -48,12 +48,13 @@ const LoginForm = () => {
             // 로그인 성공 시 MainPage로 이동합니다.
             navigate('/'); // 사용자 정보를 상태로 전달
             // 로그인한 사용자의 정보를 currentData에 저장(currentData는 현재 로그인한 사용자)
-            localStorage.setItem('currentData', JSON.stringify({ user }));
+            localStorage.setItem('currentData', JSON.stringify(user));
         } else {
             // 로그인 실패 시 알림을 표시합니다.
             alert('로그인 실패: 아이디 또는 비밀번호가 올바르지 않습니다.');
         }
     };
+    
     
 
     return (
