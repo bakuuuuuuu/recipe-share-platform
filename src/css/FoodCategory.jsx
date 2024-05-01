@@ -55,14 +55,16 @@ const FoodCategory = () => {
     },
     activeCategoryDisplay: {
       display: 'flex',
+      fontWeight: 'bold',
       justifyContent: 'center',
       alignItems: 'center',
       height: '50px',
       width: '100%',
-      fontSize: '24px',
+      fontSize: '40px',
       color: '#333',
       marginTop: '20px',
       marginBottom: '20px',
+      fontFamily: 'Arial, sans-serif'
     }
   };
 
@@ -79,7 +81,7 @@ const FoodCategory = () => {
         ))}
       </div>
       <div style={styles.activeCategoryDisplay}>
-        {activeCategory && `${activeCategory}`}
+      {activeCategory ? `${activeCategory}` : "전체"}
       </div>
       <RecipeList recipes={filteredRecipes} />
       <UnderMenu />
