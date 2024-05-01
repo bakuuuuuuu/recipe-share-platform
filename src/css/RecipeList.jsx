@@ -37,10 +37,10 @@ const RecipeList = ({ recipes }) => {
       {recipes.map(recipe => (
         <div key={recipe.id} style={styles.recipe}>
           <div style={styles.header}>
-            <div style={styles.title}>카테고리: {recipe.category}</div> {/* 제목 위치에 카테고리를 표시 */}
-            <div style={styles.author}>작성자: {recipe.id}</div>
+            <div style={styles.title}>{recipe.category}</div> {/* 제목 위치에 카테고리를 표시 */}
+            <div style={styles.author}>작성자: {recipe.savedUserId}</div>
           </div>
-          제목: {recipe.title} {/* 카테고리 위치에 제목을 표시 */}
+          제목: {recipe.title}{/* 카테고리 위치에 제목을 표시 */}
           <img src={recipe.imageUrl} alt={recipe.title} />
         </div>
       ))}

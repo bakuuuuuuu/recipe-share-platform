@@ -1,8 +1,7 @@
-//검색기능을 포함한 상단영역 jsx
 import React, { useState } from 'react';
 
 const searchStyles = {
-  //전체적인 styles
+  // 전체적인 styles
   searchContainer: {
     padding: 10,
     display: "flex",
@@ -18,7 +17,7 @@ const searchStyles = {
     flex: '1',
   },
   
-  //검색창 styles
+  // 검색창 styles
   searchbar: {
     width: "60%",
     height: "100%",
@@ -27,7 +26,7 @@ const searchStyles = {
     marginLeft: "30%",
   },
 
-  //상단 메인배너(홈링크 이동) styles
+  // 상단 메인배너(홈링크 이동) styles
   mainbanner: {
     marginRight: 10,
     backgroundColor: "white",
@@ -36,11 +35,24 @@ const searchStyles = {
   },
 };
 
+const searchbtnStyles = {
+  // 검색 버튼 styles
+  LoginBtn: {
+    float: "right",
+    backgroundColor: "white",
+    border: "none",
+    color: "black",
+    position: "fixed", // 상단에 고정
+    top: 0, // 상단에 위치
+    marginTop: "25px",
+    marginLeft: "45%",
+  },
+};
 
 const LoginbtnStyles = {
-  //로그인버튼 styles
-  LoginBtn : {
-    float:"right",
+  // 로그인버튼 styles
+  LoginBtn: {
+    float: "right",
     backgroundColor: "white",
     fontSize: "13px",
     border: "none",
@@ -48,64 +60,67 @@ const LoginbtnStyles = {
     position: "fixed", // 상단에 고정
     top: 0, // 상단에 위치
     marginTop: "25px",
-    marginLeft: "59%",
- },
+    marginLeft: "60%",
+  },
 };
 
-
-function Search({ data }) {
-  const [query, setQuery] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-
-  const handleSearch = (e) => {
-    const searchTerm = e.target.value;
-    setQuery(searchTerm);
-
-    const results = data.filter(item =>
-      item.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-
-    setSearchResults(results);
-  };
-
-  return (
-    <div style={searchStyles.searchContainer}>
-
-      {/* 로그인 버튼 */}
-      <a href='Login'>
-        <input
-          style={LoginbtnStyles.LoginBtn}
-          type="button"    
-          value={"로그인"}
-        />
-      </a>
-
-      <div style={searchStyles.searchbar}>
-        {/*상단 메인배너(홈링크 이동)*/}
-        <a href='http://localhost:3000/'>
-
-           <input
-            style={searchStyles.mainbanner}
-            type="button"
-          /><img src='SimplyCooklogo.png' style={{width: "80px", height:"70px"}}/>
+  function Search({ data = [] }) {
+    const [query, setQuery] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+  
+    const handleSearch = () => {
+      if (data && data.length > 0) {
+        const results = data.filter(item =>
+          item.toLowerCase().includes(query.toLowerCase())
+        );
+        setSearchResults(results);
+      } else {
+        setSearchResults([]); // 데이터가 유효하지 않은 경우 검색 결과를 비웁니다.
+      }
+    };
+  
+    return (
+      <div style={searchStyles.searchContainer}>
+        {/* 로그인 버튼 */}
+        <a href='Login'>
+          <input
+            style={LoginbtnStyles.LoginBtn}
+            type="button"    
+            value={"로그인"}
+          />
         </a>
-        
-        <input
-          type="text"
-          value={query}
-          placeholder="음식 카테고리 검색(ex 한식)"
-          onChange={handleSearch}
-          style={{ width: "30%", height: "40%", fontSize: 12, borderRadius: "10px", border: "1px solid black",}}
-        />
-
+  
+        <div style={searchStyles.searchbar}>
+          {/* 상단 메인배너(홈링크 이동) */}
+          <a href='http://localhost:3000/'>
+            <input
+              style={searchStyles.mainbanner}
+              type="button"
+            />
+            <img src='SimplyCooklogo.png' alt="logo" style={{width: "80px", height:"70px"}}/>
+          </a>
+          
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="음식 카테고리 검색(ex 한식)"
+            style={{ width: "30%", height: "40%", fontSize: 12, borderRadius: "10px", border: "1px solid black",}}
+          />
+          {/* 검색 버튼 추가 */}
+          <button onClick={handleSearch} style={searchbtnStyles.searchBtn}>
+          <img src='SimplyCooklogo.png' alt="logo" style={{width: "10px", height:"10px"}}/>
+          </button>
+        </div>
+        <ul style={{ overflowY: "scroll", width: "10%", height: "50%", textAlign: "left", listStyle: "none", padding: 0, border:"none"}}>
+          {searchResults.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
       </div>
-      <ul style={{ overflowY: "scroll", width: "10%", height: "50%", textAlign: "left", listStyle: "none", padding: 0, border:"none"}}>
-        {searchResults.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+    );
+  };
+  
+  export default Search;
+  
 
-export default Search;
