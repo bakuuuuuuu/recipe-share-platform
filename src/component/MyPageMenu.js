@@ -7,8 +7,8 @@ const sampleThumbNail = "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1l
 
 const menu = [
     { title: "내가 작성한 글 보기", ico: "menu", link: "./Posts" },
-    { title: "내가 작성한 댓글 보기", ico: "chat", link: "./myComments" },
-    { title: "회원 정보 수정", ico: "account_circle", link: "./EditProfile" },
+    { title: "내가 작성한 댓글 보기", ico: "chat", link: "./" },
+    { title: "회원 정보 수정", ico: "account_circle", link: "./editProfile" },
 ];
 
 const adminMenu = [
@@ -37,7 +37,7 @@ function MyPageMenu() {
                 </ul>
             </div>
             {
-                user.permission === "admin" && <>
+                user.role === "admin" && <>
                     <h3>관리자 메뉴</h3>
                     <div>
                         <ul className="bottom-border" key="admin-menu">
