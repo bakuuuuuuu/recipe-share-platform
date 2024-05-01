@@ -7,13 +7,13 @@ const sampleThumbNail = "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1l
 
 const menu = [
     { title: "내가 작성한 글 보기", ico: "menu", link: "./Posts" },
-    { title: "내가 작성한 댓글 보기", ico: "chat", link: "./" },
+    // { title: "내가 작성한 댓글 보기", ico: "chat", link: "./" },
     { title: "회원 정보 수정", ico: "account_circle", link: "./editProfile" },
 ];
 
 const adminMenu = [
     { title: "전체 작성 글 확인 및 삭제", ico: "edit_document", link: "./myPosts" },
-    { title: "전체 댓글 조회 및 삭제", ico: "chat_error", link: "./myComments" },
+    // { title: "전체 댓글 조회 및 삭제", ico: "chat_error", link: "./myComments" },
     { title: "회원 정보 수정", ico: "manage_accounts", link: "./myAcount" },
 ];
 function MyPageMenu() {
