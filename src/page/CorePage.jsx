@@ -7,18 +7,19 @@ const CorepageStyles ={
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      height: '100vh', // 화면 전체 높이를 차지  
+      height: '100vh', // 화면 전체 높이를 차지 
+      bottom: '0',
       
   },
 
   //중앙 영역 styles
   centralContentStyle: {
     width: "600px", // 중앙 컨텐츠의 너비를 100%로 설정하여 가로 전체 차지
-    height:"2000px",
+    height:"100vh",
     display: 'flex',
     flexDirection: 'column', // 자식 요소를 세로로 배치
     alignItems: 'center', // 가운데 정렬
-    paddingTop:"83",
+    paddingTop:"83px", 
   },
   
   //사이드 영역 styles
@@ -35,7 +36,6 @@ const CorepageStyles ={
     width: '600px',
     height: '350px',
     borderRadius: '3px',
-    marginTop: '48%',
     right: '0',
   },
 
@@ -344,7 +344,7 @@ function CorePage(props) {
           <ImageSlide images={imagesSlide} />
   
           {/* Recommended Recipe */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop:'45%'}}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
               <div style={CorepageStyles.RecommendWrapper}>
               <h3 style={{textAlign: "left",fontSize:"18px",fontFamily :"monospace"}}>Recommended Recipe</h3>
             </div>

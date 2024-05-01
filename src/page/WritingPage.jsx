@@ -10,6 +10,13 @@ const WritingPage = () => {
     const [noCounter, setNoCounter] = useState(1);
     const navigate = useNavigate();
 
+    useEffect(() => {
+        const savedUserData = JSON.parse(localStorage.getItem('userData'));
+        if(!savedUserData){
+            navigate('/login')
+        }
+    })
+
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
