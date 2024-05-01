@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FoodCategoryButton = ({ category, onClick }) => {
+const FoodCategoryButton = ({ category, onClick, isActive }) => {
 
   const [isHovered, setIsHovered] = useState(false);
 
@@ -14,8 +14,8 @@ const FoodCategoryButton = ({ category, onClick }) => {
 
   const dynamicStyles = {
     ...styles.button,
-    transform: isHovered ? 'scale(1.2)' : 'none',  
-    boxShadow: isHovered ? '0 0 10px #fff' : 'none', 
+    transform: isHovered || isActive ? 'scale(1.2)' : 'none',  // 활성화 또는 호버 상태일 때 확대
+    boxShadow: isHovered || isActive ? '0 0 10px #fff' : 'none', // 활성화 또는 호버 상태일 때 그림자 추가
   };
 
   return (
@@ -46,8 +46,8 @@ const styles = {
     width: '130px',
     height: '160px',
     overflow: 'hidden',
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease',  
-    marginTop: '110px',  
+    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    marginTop: '110px',
   },
   image: {
     width: '100%',
