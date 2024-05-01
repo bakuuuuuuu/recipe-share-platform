@@ -10,7 +10,7 @@ const searchStyles = {
     alignItems: "center", // 세로 방향으로 가운데 정렬
     borderBottom: "3px solid white",
     width: "100%",
-    height: 50,
+    height: 40,
     position: "fixed", // 상단에 고정
     top: 0, // 상단에 위치
     backgroundColor: "white", // 검색창 밖의 배경을 하얀색으로 설정합니다.
