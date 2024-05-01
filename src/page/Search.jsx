@@ -87,7 +87,8 @@ function Search({ data }) {
            <input
             style={searchStyles.mainbanner}
             type="button"
-          /><img src='SimplyCooklogo.png' style={{width: "80px", height:"70px"}}/>
+            value={"SimplyCook"}
+          />
         </a>
         
         <input
