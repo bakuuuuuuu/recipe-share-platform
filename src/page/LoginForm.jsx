@@ -28,32 +28,33 @@ const LoginForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-
+    
         // 회원가입 정보를 로컬 스토리지에서 가져옵니다.
         const userData = JSON.parse(localStorage.getItem('userData'));
-
+    
         // 저장된 데이터가 존재하지 않거나, 저장된 데이터가 비어있는 경우
-        if (!userData || Object.keys(userData).length === 0) {
+        if (!userData || userData.length === 0) {
             alert("생성된 계정이 없습니다. 회원가입을 먼저 해주세요.");
             return;
         }
-
+    
         // 입력된 아이디와 비밀번호를 가져옵니다.
         const { id: inputId, password: inputPassword } = userData;
-
+    
         // 입력된 아이디와 비밀번호가 일치하는지 확인합니다.
-        if (id === inputId && password === inputPassword) {
-
+        const user = userData.find(user => user.id === id && user.password === password);
+    
+        if (user) {
             // 로그인 성공 시 MainPage로 이동합니다.
             navigate('/'); // 사용자 정보를 상태로 전달
             // 로그인한 사용자의 정보를 currentData에 저장(currentData는 현재 로그인한 사용자)
-            localStorage.setItem('currentData', JSON.stringify({ userData }));
-
+            localStorage.setItem('currentData', JSON.stringify({ user }));
         } else {
             // 로그인 실패 시 알림을 표시합니다.
             alert('로그인 실패: 아이디 또는 비밀번호가 올바르지 않습니다.');
         }
     };
+    
 
     return (
         <div>
