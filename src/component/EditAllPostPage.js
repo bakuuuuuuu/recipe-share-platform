@@ -71,16 +71,15 @@ const style = {
 function EditAllPostPage(props) {
     const currentUser = useContext(UserContext);
     const allPosts = JSON.parse(localStorage.getItem("recipes")) ?? new Array();
-    const currentUserPost = allPosts?.filter(postElement => postElement?.savedUserId === currentUser.id);
-    const [toShowPosts, setToShowPosts] = useState(currentUserPost);  // 모든 포스트가 아닌 해당 작성자가 쓴 글.
+    const [toShowAllPosts, setToShowAllPosts] = useState(allPosts);  // 모든 포스트가 아닌 해당 작성자가 쓴 글.
 
 
     // 글 삭제 이벤트 ( 삭제할 No )
     const onDeleteBtnClicked = (toDeleteNo) => {
 
         // 사용자 화면에서 글 삭제
-        const updatedPost = toShowPosts.filter(post => toDeleteNo !== post.No);
-        setToShowPosts(updatedPost);
+        const updatedPost = toShowAllPosts.filter(post => toDeleteNo !== post.No);
+        toShowAllPosts(updatedPost);
 
         let deleteNo = -1;
         // 전체 글에서 해당 글 삭제
@@ -104,11 +103,9 @@ function EditAllPostPage(props) {
     };
 
     return <div>
-        <h2>내가 쓴 글 불러오기</h2>
-
-
+        <h2>전체 글 불러오기</h2>
         <ul style={style.ul}>
-            {toShowPosts?.map(value => {
+            {toShowAllPosts?.map(value => {
                 return (<li key={value.No} style={style.li}>
                     <div style={style.rowContainer}>
                         <img style={style.image} src={value.imageUrl ?? '/image/empty_image.jpg'} alt={"image"} />
@@ -120,7 +117,7 @@ function EditAllPostPage(props) {
                     </div>
                 </li>)
             })}
-            {(toShowPosts === null || toShowPosts?.length === 0) &&
+            {(toShowAllPosts === null || toShowAllPosts?.length === 0) &&
                 (<>
                     <div style={style.noItem}>
                         <span className="material-symbols-outlined" style={style.noItemIco}>priority_high</span>
@@ -135,5 +132,4 @@ function EditAllPostPage(props) {
     </div >
 
 }
-
-export default Posts;
+export default EditAllPostPage;
