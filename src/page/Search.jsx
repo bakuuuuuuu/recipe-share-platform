@@ -20,7 +20,7 @@ const searchStyles = {
 
   //검색창 styles
   searchbar: {
-    width: "60%",
+    width: "50%",
     height: "100%",
     display: "flex",
     alignItems: "center",
@@ -53,6 +53,20 @@ const LoginbtnStyles = {
     marginLeft: "450px",
     
  },
+};
+
+const searchbtnStyles = {
+  // 검색 버튼 styles
+  LoginBtn: {
+    float: "right",
+    backgroundColor: "white",
+    border: "none",
+    color: "black",
+    position: "fixed", // 상단에 고정
+    top: 0, // 상단에 위치
+    marginTop: "25px",
+    marginLeft: "45%",
+  },
 };
 
 
@@ -106,10 +120,15 @@ function Search({ data }) {
           <input
             type="text"
             value={query}
+            onChange={(e) => setQuery(e.target.value)}
             placeholder="음식 카테고리 검색(ex 한식)"
-            onChange={handleSearch}
-            style={{ width: "30%", height: "50%", fontSize: 12, borderRadius: "5px", border: "1px solid black", marginLeft:"5px"}}
+            style={{ width: "30%", height: "40%", fontSize: 12, borderRadius: "10px", border: "1px solid black",}}
           />
+          {/* 검색 버튼 추가 */}
+          <button onClick={handleSearch} style={searchbtnStyles.searchBtn}>
+          <img src='SimplyCooklogo.png' alt="logo" style={{width: "10px", height:"10px"}}/>
+          </button>
+          
           {/* 로그인 버튼 */}
           <button
              style={LoginbtnStyles.LoginBtn}
