@@ -28,18 +28,15 @@ const FoodCategory = () => {
   }, []);
 
   // 카테고리 이름에 따라 레시피를 필터링하는 함수
-
-  const filterCategoriesBySearch = () => {
-    if (!query) {
-      return categories; // 검색어가 없으면 모든 카테고리를 반환합니다.
+  const filterRecipesByCategory = (categoryName) => {
+    if (categoryName === '전체') {
+      setFilteredRecipes(recipes);
     } else {
-      const filtered = categories.filter(category =>
-        category.name.toLowerCase().includes(query.toLowerCase())
-      );
-      return filtered;
+      const filtered = recipes.filter(recipe => recipe.category === categoryName);
+      setFilteredRecipes(filtered);
     }
   };
-  
+
   // 카테고리 버튼 클릭 시 실행되는 함수
   const handleClick = (categoryName) => {
     console.log(`${categoryName} was clicked`);
@@ -73,15 +70,13 @@ const FoodCategory = () => {
     <div>
       <Search />
       <div style={styles.container}>
-      {/*FoodCategoryButton 렌더링 시 filterCategoriesBySearch 함수 사용*/}
-      {filterCategoriesBySearch().map(category => (
-        <FoodCategoryButton
-          key={category.name}
-          category={category}
-          onClick={() => handleClick(category.name)}
-        />
-      ))}
-
+        {categories.map(category => (
+          <FoodCategoryButton
+            key={category.name}
+            category={category}
+            onClick={() => handleClick(category.name)}
+          />
+        ))}
       </div>
       <div style={styles.activeCategoryDisplay}>
         {activeCategory && `${activeCategory}`}
