@@ -79,17 +79,15 @@ function Search({ data }) {
   };
      
 
-    
-
-    const handleLoginClick = () => {
+  const handleLoginClick = () => {
       if(isLoggedIn){
-        localStorage.removeItem('currentData');
-        setIsLoggedIn(false);
-        window.location.href= '/';
-      }else {
-        window.location.href='/login';
-      }
-    };
+      localStorage.removeItem('currentData');
+      setIsLoggedIn(false);
+      window.location.href= '/';
+    }else {
+      window.location.href='/login';
+    }
+  };   
   
   return (
     <div style={searchStyles.searchContainer}>
@@ -117,7 +115,7 @@ function Search({ data }) {
              style={LoginbtnStyles.LoginBtn}
              onClick={handleLoginClick}
            >
-            {inpmsLoggedIn ? "로그아웃" : "로그인" }
+            {isLoggedIn ? "로그아웃" : "로그인" }
           </button>
         </div>
         <ul style={{ overflowY: "scroll", width: "10%", height: "50%", textAlign: "left", listStyle: "none", padding: 0, border:"none"}}>
