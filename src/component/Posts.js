@@ -71,13 +71,13 @@ const style = {
 
 function Posts(props) {
     const currentUser = useContext(UserContext);
-    const posts = JSON.parse(localStorage.getItem("recipes"));
+    const posts = JSON.parse(localStorage.getItem("recipes")) ?? new Array();
 
 
     const [postList, setPostList] = useState(posts);  // useState를 사용해 postList 상태 관리
 
     const onDeleteBtnClicked = (id) => {
-        const updatedPosts = postList.filter(post => post.No !== id);
+        const updatedPosts = postList?.filter(post => post.user !== id);
         setPostList(updatedPosts);
         localStorage.setItem("recipes",JSON.stringify(postList));
     };

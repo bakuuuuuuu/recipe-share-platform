@@ -13,10 +13,14 @@ const RecipeList = ({ recipes }) => {
     recipe: {
       display: 'flex',
       flexDirection: 'column',
-      border: '1px solid #ccc',
+      border: '2px solid #35292A', 
       padding: '10px',
-      borderRadius: '5px',
+      borderRadius: '30px', 
       width: '100%',
+      transition: 'transform 0.3s ease', 
+      '&:hover': {
+        transform: 'scale(1.02)', 
+      }
     },
     header: {
       display: 'flex',
