@@ -16,11 +16,15 @@ const categories = [
 const FoodCategory = () => {
   const [recipes, setRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
+  const [activeCategory, setActiveCategory] = useState(''); // 선택된 카테고리 이름을 저장하는 상태
 
   useEffect(() => {
     // 로컬 스토리지에서 레시피를 불러옵니다.
     const storedRecipes = JSON.parse(localStorage.getItem('recipes'));
-    setRecipes(storedRecipes || []);
+    if (storedRecipes) {
+      setRecipes(storedRecipes);
+      setFilteredRecipes(storedRecipes); // 초기 화면에 모든 레시피를 보여줌
+    }
   }, []);
 
   // 카테고리 이름에 따라 레시피를 필터링하는 함수
@@ -37,9 +41,10 @@ const FoodCategory = () => {
   const handleClick = (categoryName) => {
     console.log(`${categoryName} was clicked`);
     filterRecipesByCategory(categoryName);
+    setActiveCategory(categoryName); // 클릭된 카테고리 이름을 상태에 저장
   };
 
-  // 컨테이너 스타일
+  // 스타일 정의
   const styles = {
     container: {
       display: 'flex',
@@ -47,6 +52,17 @@ const FoodCategory = () => {
       justifyContent: 'center',
       alignItems: 'center',
       margin: 'auto',
+    },
+    activeCategoryDisplay: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '50px',
+      width: '100%',
+      fontSize: '24px',
+      color: '#333',
+      marginTop: '20px',
+      marginBottom: '20px',
     }
   };
 
@@ -61,6 +77,9 @@ const FoodCategory = () => {
             onClick={() => handleClick(category.name)}
           />
         ))}
+      </div>
+      <div style={styles.activeCategoryDisplay}>
+        {activeCategory && `${activeCategory}`}
       </div>
       <RecipeList recipes={filteredRecipes} />
       <UnderMenu />
