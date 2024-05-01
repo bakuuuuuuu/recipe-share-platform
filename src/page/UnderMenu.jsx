@@ -31,6 +31,7 @@ const UnderMenuStyles = {
         margin: '15px',
         flex: '1',
         width: '100px', // 너비 지정
+        
     },
 
     // 선택된 버튼의 스타일
@@ -74,14 +75,14 @@ function UnderMenu(props) {
             <div style={mainStyle}>
             <Outlet/>
             <div style={UnderMenuStyles.MenuContainer}>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight: '30px' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginRight: '5px', marginLeft:'45px'}}>
                     <NavLink to="/" style={selectedButton === 'HOME' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('HOME')}>
                         HOME
                     </NavLink>
                     <NavLink to="/foodcategory" style={selectedButton === 'CATEGORY' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('CATEGORY')}>
                         CATEGORY
                     </NavLink>
-                    <NavLink to="/Writingpage" style={selectedButton === 'POSTING' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={!props.currentData ? null : handleWritingPageClick}>
+                    <NavLink to="/Writingpage" style={selectedButton === 'POSTING' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('POSTING')}>
                         POSTING
                     </NavLink>
                     <NavLink to="/mypage" style={selectedButton === 'MYPAGE' ? UnderMenuStyles.selectedIconStyle : UnderMenuStyles.IconStyle} onClick={() => setSelectedButton('MYPAGE')}>

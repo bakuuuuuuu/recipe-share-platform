@@ -17,22 +17,24 @@ const searchStyles = {
     zIndex: 999, // 다른 요소 위에 겹치도록 설정
     flex: '1',
   },
-  
+
   //검색창 styles
   searchbar: {
     width: "60%",
     height: "100%",
     display: "flex",
     alignItems: "center",
-    marginLeft: "30%",
+    marginLeft: "33%",
   },
 
   //상단 메인배너(홈링크 이동) styles
   mainbanner: {
-    marginRight: 5,
+    marginLeft:"20px",
+    justifyContent: "center", // 가로 방향으로 가운데 정렬
+    alignItems: "center", // 세로 방향으로 가운데 정렬
     backgroundColor: "white",
     border: 'none',
-    fontSize: "19px",
+    fontSize: "16px",
   },
 };
 
@@ -42,13 +44,13 @@ const LoginbtnStyles = {
   LoginBtn : {
     float:"right",
     backgroundColor: "white",
-    fontSize: "13px",
+    fontSize: "11px",
     border: "none",
     color: "black",
     position: "fixed", // 상단에 고정
     top: 0, // 상단에 위치
-    marginTop: "22px",
-    marginLeft: "59%",
+    marginTop: "24px", 
+    marginLeft: "4px",
  },
 };
 
@@ -70,41 +72,40 @@ function Search({ data }) {
 
   return (
     <div style={searchStyles.searchContainer}>
-
-      {/* 로그인 버튼 */}
-      <a href='Login'>
-        <input
-          style={LoginbtnStyles.LoginBtn}
-          type="button"    
-          value={"로그인"}
-        />
-      </a>
-
-      <div style={searchStyles.searchbar}>
-        {/*상단 메인배너(홈링크 이동)*/}
-        <a href='http://localhost:3000/'>
-
-           <input
-            style={searchStyles.mainbanner}
-            type="button"
-            value={"SimplyCook"}
-          />
-        </a>
         
-        <input
-          type="text"
-          value={query}
-          placeholder="음식 카테고리 검색(ex 한식)"
-          onChange={handleSearch}
-          style={{ width: "30%", height: "40%", fontSize: 12, borderRadius: "10px", border: "1px solid black",}}
-        />
+        <div style={searchStyles.searchbar}>
+          {/*상단 메인배너(홈링크 이동)*/}
+          <a href='http://localhost:3000/'>
 
-      </div>
-      <ul style={{ overflowY: "scroll", width: "10%", height: "50%", textAlign: "left", listStyle: "none", padding: 0, border:"none"}}>
-        {searchResults.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>
+            <input
+              style={searchStyles.mainbanner}
+              type="button"
+              value={"SimplyCook"}
+            />
+          </a>
+          
+          <input
+            type="text"
+            value={query}
+            placeholder="음식 카테고리 검색(ex 한식)"
+            onChange={handleSearch}
+            style={{ width: "30%", height: "50%", fontSize: 12, borderRadius: "5px", border: "1px solid black", marginLeft:"5px"}}
+          />
+          {/* 로그인 버튼 */}
+          <a href='Login'>
+            <input
+              style={LoginbtnStyles.LoginBtn}
+              type="button"    
+              value={"로그인"}
+            />
+          </a>
+        </div>
+        <ul style={{ overflowY: "scroll", width: "10%", height: "50%", textAlign: "left", listStyle: "none", padding: 0, border:"none"}}>
+          {searchResults.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+        
     </div>
   );
 };
