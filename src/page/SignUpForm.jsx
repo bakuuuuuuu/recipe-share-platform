@@ -52,22 +52,20 @@ const SignUpForm = () => {
         navigate('/');
     };
 
-    const handleSubmit = async(event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-
-        // 로컬 스토리지에서 기존 사용자 데이터를 확인합니다.
-        const storedData = JSON.parse(localStorage.getItem('userData'));
-
+    
+        // 기존 사용자 데이터 불러오기
+        const storedData = JSON.parse(localStorage.getItem('userData')) || [];
+    
         // 입력한 아이디와 비교하여 중복 여부를 확인합니다.
-        const isDuplicate = storedData && storedData.id === id;
-
+        const isDuplicate = storedData.some(user => user.id === id);
+    
         if (isDuplicate) {
             alert("중복된 아이디입니다. 다시 입력해주세요.");
-        }
-        
-        else {
-            // 사용자 입력 데이터를 객체로 구성
-            const userData = {
+        } else {
+            // 새로운 사용자 정보 객체 생성
+            const newUser = {
                 id,
                 password,
                 email,
@@ -77,16 +75,18 @@ const SignUpForm = () => {
                 category,
                 role
             };
-
-            // 로컬 스토리지에 회원가입 정보 저장
-            localStorage.setItem('userData', JSON.stringify(userData));
-            
+    
+            // 기존 데이터에 새로운 사용자 정보 추가
+            const updatedData = [...storedData, newUser];
+    
+            // 로컬 스토리지에 업데이트된 데이터 저장
+            localStorage.setItem('userData', JSON.stringify(updatedData));
+    
             alert("회원가입이 완료되었습니다!");
-
+    
             // 회원가입 완료 후 LoginForm으로 이동합니다.
-            navigate('/login'); 
+            navigate('/login');
         }
-        
     };
 
     return (
