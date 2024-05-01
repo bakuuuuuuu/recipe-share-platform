@@ -8,6 +8,7 @@ const CorepageStyles ={
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh', // 화면 전체 높이를 차지  
+      
   },
 
   //중앙 영역 styles
@@ -17,6 +18,7 @@ const CorepageStyles ={
     display: 'flex',
     flexDirection: 'column', // 자식 요소를 세로로 배치
     alignItems: 'center', // 가운데 정렬
+    paddingTop:"60px",
   },
   
   //사이드 영역 styles
