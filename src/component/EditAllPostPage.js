@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../page/MyPage";
+import { height } from "@fortawesome/free-solid-svg-icons/fa0";
 const style = {
     width: "50px",
     height: "50px",
@@ -25,6 +26,7 @@ const style = {
     columnContainer: {
         paddingLeft: "20px",
         display: "flex",
+        height: "100px",
         flexDirection: "column",
         justifyContent: "center",
     },
@@ -32,14 +34,26 @@ const style = {
         width: "120px",
         height: "100px",
     },
+    author: {
+      fontSize : "10px",
+      height : "20px",
+      flex: 1,
+      margin: 0,
+    },
+
     title: {
-        fontSize: "14px",
+      flex: 1,
+        fontSize: "20px",
         color: "rgb(45,45,45)",
         fontWeight: "700",
+      margin: 0,
+        
         width: "200px",
     },
     subtitle: {
-        fontSize: "11px",
+      margin: 0,
+      
+        fontSize: "15px",
         color: "rgb(153,153,153)",
         width: "300px",
     },
@@ -68,19 +82,18 @@ const style = {
 }
 
 
-function Posts(props) {
+function EditAllPostPage(props) {
     const currentUser = useContext(UserContext);
     const allPosts = JSON.parse(localStorage.getItem("recipes")) ?? new Array();
-    const currentUserPost = allPosts?.filter(postElement => postElement?.savedUserId === currentUser.id);
-    const [toShowPosts, setToShowPosts] = useState(currentUserPost);  // 모든 포스트가 아닌 해당 작성자가 쓴 글.
+    const [toShowAllPosts, setToShowAllPosts] = useState(allPosts);  // 모든 포스트가 아닌 해당 작성자가 쓴 글.
 
 
     // 글 삭제 이벤트 ( 삭제할 No )
     const onDeleteBtnClicked = (toDeleteNo) => {
 
         // 사용자 화면에서 글 삭제
-        const updatedPost = toShowPosts.filter(post => toDeleteNo !== post.No);
-        setToShowPosts(updatedPost);
+        const updatedPost = toShowAllPosts.filter(post => toDeleteNo !== post.No);
+        setToShowAllPosts(updatedPost);
 
         let deleteNo = -1;
         // 전체 글에서 해당 글 삭제
@@ -104,15 +117,14 @@ function Posts(props) {
     };
 
     return <div>
-        <h2>내가 쓴 글 불러오기</h2>
-
-
+        <h2>전체 글 불러오기</h2>
         <ul style={style.ul}>
-            {toShowPosts?.map(value => {
+            {toShowAllPosts?.map(value => {
                 return (<li key={value.No} style={style.li}>
                     <div style={style.rowContainer}>
                         <img style={style.image} src={value.imageUrl ?? '/image/empty_image.jpg'} alt={"image"} />
                         <div style={style.columnContainer}>
+                        <p style={{ ...style.author, ...style.oneLineText }}>{"작성자:".concat(value.savedUserId)}</p>
                             <p style={{ ...style.title, ...style.oneLineText }}>{value.title}</p>
                             <p style={{ ...style.subtitle, ...style.oneLineText }}>{value.content}</p>
                         </div>
@@ -120,7 +132,7 @@ function Posts(props) {
                     </div>
                 </li>)
             })}
-            {(toShowPosts === null || toShowPosts?.length === 0) &&
+            {(toShowAllPosts === null || toShowAllPosts?.length === 0) &&
                 (<>
                     <div style={style.noItem}>
                         <span className="material-symbols-outlined" style={style.noItemIco}>priority_high</span>
@@ -135,5 +147,4 @@ function Posts(props) {
     </div >
 
 }
-
-export default Posts;
+export default EditAllPostPage;

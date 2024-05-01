@@ -12,9 +12,6 @@ export const MyPage = () => {
     const [title, setTitle] = useState("마이페이지");  
     
     const currentUser = JSON.parse(localStorage.getItem("currentData"));
-    console.log("currentUser");
-    
-    console.log(currentUser);
     
     if (currentUser == null) {
         return <Navigate to="/login" replace state={{ redirectedFrom: location }} />;

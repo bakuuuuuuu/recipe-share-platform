@@ -1,16 +1,19 @@
-//App.js
 import React from 'react';
-import { NavLink, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import LoginForm from './page/LoginForm';
 import SignUpForm from './page/SignUpForm';
 import Posts from './component/Posts';
 import EditProfile from './component/EditProfile';
-import {MyPage} from './page/MyPage';
+import { MyPage } from './page/MyPage';
 import WritingPage from './page/WritingPage';
 import FoodCategory from './css/FoodCategory';
 import Main from './page/Main';
 import UnderMenu from './page/UnderMenu';
 import { initUesrData } from './domain/userData';
+import EditAllPostPage from './component/EditAllPostPage';
+import UserEditForm from './page/UserEditForm';
+
+
 // git test
 function App() {
   initUesrData();
@@ -20,6 +23,7 @@ function App() {
     <Routes>
     <Route path="/login" element={<LoginForm />} /> {/* 로그인 페이지 라우트 추가 */}
     <Route path="/signup" element={<SignUpForm />} /> {/* 회원가입 페이지 라우트 추가 */}
+  
 
     <Route element={<UnderMenu/>}>
       {/* 필요에 따라 더 많은 라우트를 추가할 수 있습니다 */}
@@ -31,6 +35,8 @@ function App() {
       <Route path="/mypage" element={<MyPage />}>
         <Route path="posts" element={<Posts />} />
         <Route path="EditProfile" element={<EditProfile />} />
+        <Route path="editAllPostPage" element={<EditAllPostPage />} />
+        <Route path="userEditForm" element={<UserEditForm />} />
       </Route>
       </Route>  
     </Routes>

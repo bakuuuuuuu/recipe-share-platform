@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const RecipeList = ({ recipes }) => {
   const styles = {
@@ -43,16 +44,15 @@ const RecipeList = ({ recipes }) => {
   return (
     <div style={styles.recipeContainer}>
       {recipes.map(recipe => (
-        <a href={`/recipe/${recipe.id}`} style={styles.link} key={recipe.id}>
+        <Link to={`/recipe/${recipe.No}`} style={styles.link} key={recipe.No}>
           <div style={styles.recipe}>
             <div style={styles.header}>
-              <div style={styles.title}>{recipe.category}</div>
+              <div style={styles.category}>{recipe.category}</div>
               <div style={styles.author}>작성자: {recipe.savedUserId}</div>
             </div>
-            제목: {recipe.title}
-            <img src={recipe.imageUrl} alt={recipe.title} />
+            <div style={styles.title}> 제목: {recipe.title} </div>
           </div>
-        </a>
+        </Link>
       ))}
     </div>
   );
