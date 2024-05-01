@@ -29,7 +29,7 @@ const searchStyles = {
 
   //상단 메인배너(홈링크 이동) styles
   mainbanner: {
-    marginRight: 10,
+    marginRight: 5,
     backgroundColor: "white",
     border: 'none',
     fontSize: "19px",
@@ -47,7 +47,7 @@ const LoginbtnStyles = {
     color: "black",
     position: "fixed", // 상단에 고정
     top: 0, // 상단에 위치
-    marginTop: "25px",
+    marginTop: "22px",
     marginLeft: "59%",
  },
 };
