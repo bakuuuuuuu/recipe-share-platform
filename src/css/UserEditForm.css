@@ -1,0 +1,30 @@
+h2 {
+    text-align: center;
+}
+
+input {
+    width: 80px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    margin-bottom: 5px;
+}
+
+#tablediv {
+    text-align: center;
+}
+
+.tid, .tname, .tgender{
+    width: 50px;
+}
+
+.temail, .tnumber {
+    width: 110px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+

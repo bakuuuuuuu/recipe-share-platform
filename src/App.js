@@ -10,33 +10,37 @@ import FoodCategory from './css/FoodCategory';
 import Main from './page/Main';
 import UnderMenu from './page/UnderMenu';
 import { initUesrData } from './domain/userData';
-import AdminPage from './page/AdminPage';
-import RecipeDetailPage from './page/RecipeDetailPage'; // 레시피 상세 페이지 추가
+import EditAllPostPage from './component/EditAllPostPage';
+import UserEditForm from './page/UserEditForm';
 
+
+// git test
 function App() {
   initUesrData();
 
-  return (
-    <>
-      <Routes>
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/signup" element={<SignUpForm />} />
-        <Route path="/adminhome" element={<AdminPage />} />
+  return (<>
 
-        <Route element={<UnderMenu />}>
-          <Route path="/" element={<Main />} />
-          <Route path="/foodcategory" element={<FoodCategory />} />
-          <Route path="/writingpage" element={<WritingPage />} />
-          <Route path="/mypage" element={<MyPage />}>
-            <Route path="posts" element={<Posts />} />
-            <Route path="EditProfile" element={<EditProfile />} />
-          </Route>
+    <Routes>
+    <Route path="/login" element={<LoginForm />} /> {/* 로그인 페이지 라우트 추가 */}
+    <Route path="/signup" element={<SignUpForm />} /> {/* 회원가입 페이지 라우트 추가 */}
+  
 
-          {/* 레시피 상세 페이지 라우트 추가 */}
-          <Route path="/recipe/:No" element={<RecipeDetailPage />} />
-        </Route>
-      </Routes>
-    </>
+    <Route element={<UnderMenu/>}>
+      {/* 필요에 따라 더 많은 라우트를 추가할 수 있습니다 */}
+      <Route path="/" element={<Main />} /> {/* 회원가입 페이지 라우트 추가 */}
+      <Route path='/foodcategory' element={<FoodCategory/>} /> 
+      <Route path='/Writingpage' element={<WritingPage/>} /> 
+
+      {/* 마이페이지 추가*/}
+      <Route path="/mypage" element={<MyPage />}>
+        <Route path="posts" element={<Posts />} />
+        <Route path="EditProfile" element={<EditProfile />} />
+        <Route path="editAllPostPage" element={<EditAllPostPage />} />
+        <Route path="userEditForm" element={<UserEditForm />} />
+      </Route>
+      </Route>  
+    </Routes>
+</>
   );
 }
 
