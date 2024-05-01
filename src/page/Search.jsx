@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 
 const searchStyles = {
-  //전체적인 styles
+  // 전체적인 styles
   searchContainer: {
     padding: 10,
     display: "flex",
@@ -27,7 +27,7 @@ const searchStyles = {
     marginLeft: "33%",
   },
 
-  //상단 메인배너(홈링크 이동) styles
+  // 상단 메인배너(홈링크 이동) styles
   mainbanner: {
     marginLeft:"20px",
     justifyContent: "center", // 가로 방향으로 가운데 정렬
@@ -38,11 +38,24 @@ const searchStyles = {
   },
 };
 
+const searchbtnStyles = {
+  // 검색 버튼 styles
+  LoginBtn: {
+    float: "right",
+    backgroundColor: "white",
+    border: "none",
+    color: "black",
+    position: "fixed", // 상단에 고정
+    top: 0, // 상단에 위치
+    marginTop: "25px",
+    marginLeft: "45%",
+  },
+};
 
 const LoginbtnStyles = {
-  //로그인버튼 styles
-  LoginBtn : {
-    float:"right",
+  // 로그인버튼 styles
+  LoginBtn: {
+    float: "right",
     backgroundColor: "white",
     fontSize: "11px",
     border: "none",
