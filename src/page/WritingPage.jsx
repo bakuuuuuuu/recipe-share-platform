@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CorepageStyless from './CorepageStyless';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 const WritingPage = () => {
     const [title, setTitle] = useState('');
@@ -9,13 +9,13 @@ const WritingPage = () => {
     const [category, setCategory] = useState('');
     const [noCounter, setNoCounter] = useState(1);
     const navigate = useNavigate();
+    const location = useLocation();
 
-    useEffect(() => {
-        const savedUserData = JSON.parse(localStorage.getItem('userData'));
-        if(!savedUserData){
-            navigate('/login')
-        }
-    })
+    const savedUserData = JSON.parse(localStorage.getItem('userData'));
+
+    if (!savedUserData) {
+        return <Navigate to="/login" replace state={{ redirectedFrom: location }} />;
+    }
 
     const handleImageChange = (e) => {
         const file = e.target.files[0];
