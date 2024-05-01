@@ -54,8 +54,9 @@ function UnderMenu(props) {
     const handleWritingPageClick = () => {
         if(!props.currentData){
             alert('로그인을 해야 접근 가능합니다');
-            return;
+            return false;
         }
+        return true;
     }
     /*
     // MYPAGE 버튼 클릭 핸들러
