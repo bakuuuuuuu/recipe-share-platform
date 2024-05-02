@@ -77,7 +77,6 @@ function Posts(props) {
 
     // 글 삭제 이벤트 ( 삭제할 No )
     const onDeleteBtnClicked = (toDeleteNo) => {
-
         // 사용자 화면에서 글 삭제
         const updatedPost = toShowPosts.filter(post => toDeleteNo !== post.No);
         setToShowPosts(updatedPost);
@@ -93,11 +92,7 @@ function Posts(props) {
         if(deleteNo === -1){
           console.log("[Post] 글 삭제 오류) 해당 아이디에 존재하는 글을 찾을 수 없음.");
         } 
-        console.log("삭제할 글");
-        console.log(allPosts[deleteNo]);
-
-       allPosts.pop(deleteNo);
-
+        allPosts.splice(deleteNo,1);
 
         // 삭제 후 저장 
         localStorage.setItem("recipes",JSON.stringify(allPosts));
