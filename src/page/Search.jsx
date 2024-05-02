@@ -133,7 +133,7 @@ function Search({ data }) {
             style={searchStyles.LoginBtn}
             onClick={handleSearch}
           >
-            <img src='/search.png'></img>
+            <img src='/searchicon.gif' style={{width:'20px', height:'20px'}}/>
           </button>
           
           {/* 로그인 버튼 */}
