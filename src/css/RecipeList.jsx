@@ -59,9 +59,9 @@ const RecipeList = ({ recipes }) => {
       padding: '5px 10px',
     },
     activePageButton: {
-      background: 'lightgray',
+      background: 'white',
       border: 'none',
-      color: 'black',
+      color: 'red',
       cursor: 'pointer',
       marginLeft: '5px',
       padding: '5px 10px',
