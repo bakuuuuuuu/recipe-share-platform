@@ -14,6 +14,7 @@ import EditAllPostPage from './component/EditAllPostPage';
 import UserEditForm from './page/UserEditForm';
 import { initPostData } from './domain/postData';
 import RecipeDetailPage from './page/RecipeDetailPage';
+import AccountFindForm from './page/AccountFindForm';
 
 
 // git test
@@ -25,6 +26,7 @@ function App() {
     <Routes>
       <Route path="/login" element={<LoginForm />} /> {/* 로그인 페이지 라우트 추가 */}
       <Route path="/signup" element={<SignUpForm />} /> {/* 회원가입 페이지 라우트 추가 */}
+      <Route path="/accountfind" element={<AccountFindForm />} /> {/* 아이디/비밀번호 찾기 페이지 라우트 추가 */}
 
 
       <Route element={<UnderMenu />}>
