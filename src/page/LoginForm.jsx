@@ -104,7 +104,7 @@ const LoginForm = () => {
                         <button id='loginbtn' type="submit">로그인</button>
                     </div>
                     <div id='SignUp'>
-                        <a href='#'>아이디/비밀번호 찾기</a>
+                        <a href='/accountfind'>아이디/비밀번호 찾기</a>
                         <a href='/signup'>회원가입</a>
                     </div>
                 </form>

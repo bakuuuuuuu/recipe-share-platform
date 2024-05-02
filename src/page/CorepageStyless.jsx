@@ -1,11 +1,11 @@
 const CorepageStyless = {
-    corePageStyle: {
+    corePageStyles: {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh', // 화면 전체 높이를 차지
     },
-    centralContentStyle: {
+    centralContentStyles: {
       width: '600px', // 중앙 영역의 가로 너비 조정
       backgroundColor: 'white', // 중앙 영역의 배경색
       padding: '20px', // 내부 여백
@@ -13,7 +13,7 @@ const CorepageStyless = {
       borderRadius: '8px', // 모서리를 둥글게 만듦
       marginBottom: '60px',
     },
-    sideContentStyle : {
+    sideContentStyles: {
       flex: '1', // 나머지 영역을 균등하게 나눔
       backgroundColor: 'lightgrey', // 사이드 회색 배경
       height: '100%', // 높이를 화면 전체로
@@ -26,6 +26,7 @@ const CorepageStyless = {
       
     },
     inputStyle: {
+      
       marginBottom: '15px',
       padding: '10px',
       fontSize: '16px',

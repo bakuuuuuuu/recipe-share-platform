@@ -12,6 +12,7 @@ const style = {
     },
 
     li: {
+      borderRadius: "5px",
         margin: "0px",
         marginBottom: "20px",
         backgroundColor: "white",
@@ -31,6 +32,7 @@ const style = {
         justifyContent: "center",
     },
     image: {
+      borderRadius: "5px 0px 0px 5px",
         width: "120px",
         height: "100px",
     },
@@ -106,12 +108,7 @@ function EditAllPostPage(props) {
         if(deleteNo === -1){
           console.log("[Post] 글 삭제 오류) 해당 아이디에 존재하는 글을 찾을 수 없음.");
         } 
-        console.log("삭제할 글");
-        console.log(allPosts[deleteNo]);
-
-       allPosts.pop(deleteNo);
-
-
+        allPosts.splice(deleteNo,1);
         // 삭제 후 저장 
         localStorage.setItem("recipes",JSON.stringify(allPosts));
     };

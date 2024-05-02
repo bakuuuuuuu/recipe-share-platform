@@ -11,7 +11,7 @@ const UnderMenuStyles = {
     MenuContainer: {
         padding: 10,
         display: "flex",
-        borderTop: "3px solid white",
+        borderTop: "1px solid black",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",

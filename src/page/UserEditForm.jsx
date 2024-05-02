@@ -28,6 +28,12 @@ const UserEditForm = () => {
         setUsers(updatedUsers);
     };
 
+    const handleEditButtonClick = () => {
+        // 수정 완료 알림
+        alert("수정이 완료되었습니다!");
+    };
+
+
     // 사용자 정보를 삭제하는 함수
     const handleDeleteUser = (index) => {
         // 기존 사용자 배열에서 해당 사용자를 제외한 새로운 배열을 만듭니다.
@@ -38,10 +44,12 @@ const UserEditForm = () => {
 
         // UI를 업데이트합니다.
         setUsers(updatedUsers);
+
+        alert("삭제가 완료되었습니다!");
     };
 
     return (
-        <div>
+        <div id='UserEditForm'>
             <h2>회원 정보 수정</h2>
             <div id='tablediv'>
                 <table>
@@ -60,14 +68,14 @@ const UserEditForm = () => {
                     <tbody>
                         {users.map((user, index) => (
                             <tr key={index}>
-                                <td><input type="text" className = 'tid' value={user.id} onChange={(e) => handleEditUser(index, 'id', e.target.value)} /></td>
+                                <td><input type="text" className='tid' value={user.id} onChange={(e) => handleEditUser(index, 'id', e.target.value)} /></td>
                                 <td><input type="text" className='tname' value={user.name} onChange={(e) => handleEditUser(index, 'name', e.target.value)} /></td>
                                 <td><input type="text" className='temail' value={user.email} onChange={(e) => handleEditUser(index, 'email', e.target.value)} /></td>
                                 <td><input type="text" className='tnumber' value={user.phoneNumber} onChange={(e) => handleEditUser(index, 'phoneNumber', e.target.value)} /></td>
                                 <td><input type="text" className='tgender' value={user.gender} onChange={(e) => handleEditUser(index, 'gender', e.target.value)} /></td>
                                 <td><input type="text" value={user.category} onChange={(e) => handleEditUser(index, 'category', e.target.value)} /></td>
                                 <td>
-                                    <button onClick={() => handleEditUser(index)}>수정</button>
+                                    <button onClick={() => { handleEditUser(index); handleEditButtonClick(); }}>수정</button>
                                 </td>
                                 <td>
                                     <button onClick={() => handleDeleteUser(index)}>삭제</button>
