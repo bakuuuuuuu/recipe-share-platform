@@ -98,7 +98,7 @@ function EditProfile() {
       currentUser.email = email;
       currentUser.name = name;
       currentUser.phoneNumber = phoneNumber;
-      currentUser.gender = gender;
+      currentUser.gender = gender === "남성" ? "male" : "female";
       currentUser.category = category;
 
       userdatas[currentUserIndex] = currentUser;
