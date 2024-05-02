@@ -21,11 +21,12 @@ const Title = styled.h2`
 
 const Image = styled.img`
     max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-    margin: 30px;
     width :600px;
     height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    margin: 30px auto; /* Center the image horizontally */
+    display: block; 
 `;
 
 const Detail = styled.div`
