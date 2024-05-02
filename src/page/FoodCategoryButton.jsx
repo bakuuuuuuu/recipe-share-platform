@@ -40,7 +40,7 @@ const styles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: '10px',
+    margin: '14px',
     padding: '15px',
     backgroundColor: '#35292A',
     border: 'none',
