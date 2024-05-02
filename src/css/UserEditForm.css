@@ -11,11 +11,8 @@ input {
 }
 
 #tablediv {
-    text-align: center;
-}
-
-div.tablediv table {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
 }
 
 .tid, .tname, .tgender{
