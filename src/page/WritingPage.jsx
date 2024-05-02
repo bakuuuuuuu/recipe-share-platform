@@ -103,19 +103,19 @@ const WritingPage = () => {
             </div>
 
             {/* 본문 영역 */}
-            <div style={{ ...CorepageStyless.corePageStyles, maxHeight: 'calc(100vh - 100px)', overflowY: 'auto' }}>
-                <div style={{ ...CorepageStyless.sideContentStyles }}> {/* 좌측 사이드 영역 */}
+            <div style={{ ...CorepageStyless.corePageStyless, maxHeight: 'calc(100vh - 100px)', overflowY: 'auto' }}>
+                <div style={{ ...CorepageStyless.sideContentStyless }}> {/* 좌측 사이드 영역 */}
                     {/* 여기에 좌측 사이드 영역의 내용을 추가하세요 */}
                 </div>
-                <div style={{ ...CorepageStyless.centralContentStyles,  marginTop: '0', minHeight: '200px' }}> {/* 중앙 영역 */}
+                <div style={{ ...CorepageStyless.centralContentStyless,  marginTop: '0', minHeight: '200px' }}> {/* 중앙 영역 */}
                     <h2 style={{ textAlign: 'center'}}>레시피</h2>
-                    <form style={CorepageStyless.formStyle} onSubmit={handleSubmit}>
+                    <form style={CorepageStyless.formStyless} onSubmit={handleSubmit}>
                         <input
                             type="text"
                             placeholder="제목"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
-                            style={{ ...CorepageStyless.inputStyle, borderRadius: '8px', width: '500px'}}
+                            style={{ ...CorepageStyless.inputStyless, borderRadius: '8px', width: '500px'}}
                         />
                            <div style={{ maxHeight: '200px', overflow: 'hidden', marginBottom: '20px' }}> {/* 이미지 영역을 감싸는 div */}
                              {image && (
@@ -130,7 +130,7 @@ const WritingPage = () => {
                             <select
                                 value={category}
                                 onChange={(e) => setCategory(e.target.value)}
-                                style={{ ...CorepageStyless.inputStyle, borderRadius: '8px', width: '200px' }}
+                                style={{ ...CorepageStyless.inputStyless, borderRadius: '8px', width: '200px' }}
                             >
                                 <option value="">카테고리 선택</option>
                                 <option value="한식">한식</option>
@@ -140,7 +140,7 @@ const WritingPage = () => {
                                 <option value="디저트">디저트</option>
                             </select>
                             <div>
-                                <button style={CorepageStyless.buttonStyle} onClick={handleImageAddButtonClick}>이미지 추가</button>
+                                <button style={CorepageStyless.buttonStyless} onClick={handleImageAddButtonClick}>이미지 추가</button>
                                 <input
                                     type="file"
                                     accept="image/*"
@@ -155,19 +155,19 @@ const WritingPage = () => {
                             placeholder="내용"
                             value={content}
                             onChange={(e) => setContent(e.target.value)}
-                            style={{ ...CorepageStyless.inputStyle, height: '100px', borderRadius: '8px' }}
+                            style={{ ...CorepageStyless.inputStyless, height: '100px', borderRadius: '8px' }}
                         />
                         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                            <button type="submit" style={{ ...CorepageStyless.buttonStyle, marginRight: '10px' }}>
+                            <button type="submit" style={{ ...CorepageStyless.buttonStyless, marginRight: '10px' }}>
                                 작성
                             </button>
-                            <button type="button" style={CorepageStyless.buttonStyle} onClick={handleCancel}>
+                            <button type="button" style={CorepageStyless.buttonStyless} onClick={handleCancel}>
                                 취소
                             </button>
                         </div>
                     </form>
                 </div>
-                <div style={{ ...CorepageStyless.sideContentStyles }}> {/* 우측 사이드 영역 */}
+                <div style={{ ...CorepageStyless.sideContentStyless }}> {/* 우측 사이드 영역 */}
                     {/* 여기에 우측 사이드 영역의 내용을 추가하세요 */}
                 </div>
             </div>
