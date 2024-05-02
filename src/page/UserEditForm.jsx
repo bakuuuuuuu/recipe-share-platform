@@ -41,7 +41,7 @@ const UserEditForm = () => {
     };
 
     return (
-        <div>
+        <div id='UserEditForm'>
             <h2>회원 정보 수정</h2>
             <div id='tablediv'>
                 <table>

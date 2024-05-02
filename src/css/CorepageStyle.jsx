@@ -18,7 +18,7 @@ const CorepageStyles = {
       height: '100%', // 높이를 화면 전체로
     },
   
-//dwadwadwadwada
+
     formStyle: {
       display: 'flex',
       flexDirection: 'column',

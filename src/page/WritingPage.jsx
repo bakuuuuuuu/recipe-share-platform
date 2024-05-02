@@ -79,19 +79,32 @@ const WritingPage = () => {
         // 이미지 추가 버튼을 클릭할 때 파일 선택 창을 엽니다.
         document.getElementById('imageInput').click();
     };
+    const styless = {
+        header: {
+            marginRight:"10px",
+            justifyContent: "center", // 가로 방향으로 가운데 정렬
+            alignItems: "center", // 세로 방향으로 가운데 정렬
+            backgroundColor: "white",
+            border: 'none',
+            fontSize: "14px",
+            // 추가적인 스타일은 여기에 추가할 수 있습니다.
+        },
+    };
+    
 
     return (
         <div>
-            <div id="header">
-                <input type="button" id='home' onClick={handleHomeClick} value={"SimplyCook"} />
+            {/*헤더 영역 */}
+            <div id="header" style={styless.header}>
+                <input type="button" id='home' onClick={handleHomeClick} value={"SimplyCook"}  />
             </div>
 
             {/* 본문 영역 */}
-            <div style={{ ...CorepageStyless.corePageStyle }}>
-                <div style={{ ...CorepageStyless.sideContentStyle }}> {/* 좌측 사이드 영역 */}
+            <div style={{ ...CorepageStyless.corePageStyles, maxHeight: 'calc(100vh - 100px)', overflowY: 'auto' }}>
+                <div style={{ ...CorepageStyless.sideContentStyles }}> {/* 좌측 사이드 영역 */}
                     {/* 여기에 좌측 사이드 영역의 내용을 추가하세요 */}
                 </div>
-                <div style={{ ...CorepageStyless.centralContentStyle,  marginTop: '0' }}> {/* 중앙 영역 */}
+                <div style={{ ...CorepageStyless.centralContentStyles,  marginTop: '0', minHeight: '200px' }}> {/* 중앙 영역 */}
                     <h2 style={{ textAlign: 'center'}}>레시피</h2>
                     <form style={CorepageStyless.formStyle} onSubmit={handleSubmit}>
                         <input
@@ -99,8 +112,17 @@ const WritingPage = () => {
                             placeholder="제목"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
-                            style={{ ...CorepageStyless.inputStyle, borderRadius: '8px' }}
+                            style={{ ...CorepageStyless.inputStyle, borderRadius: '8px', width: '500px'}}
                         />
+                           <div style={{ maxHeight: '200px', overflow: 'hidden', marginBottom: '20px' }}> {/* 이미지 영역을 감싸는 div */}
+                             {image && (
+                             <img
+                                 src={URL.createObjectURL(image)}
+                                 alt="업로드한 이미지"
+                                 style={{ maxWidth: '100%',maxHeight:'200px', marginBottom: '10px' }}
+                        />
+                               )}
+                            </div>
                         <div style={{ marginBottom: '15px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                             <select
                                 value={category}
@@ -125,18 +147,12 @@ const WritingPage = () => {
                                 />
                             </div>
                         </div>
-                        {image && (
-                            <img
-                                src={URL.createObjectURL(image)}
-                                alt="업로드한 이미지"
-                                style={{ maxWidth: '100%', marginBottom: '10px' }}
-                            />
-                        )}
+                       
                         <textarea
                             placeholder="내용"
                             value={content}
                             onChange={(e) => setContent(e.target.value)}
-                            style={{ ...CorepageStyless.inputStyle, height: '300px', borderRadius: '8px' }}
+                            style={{ ...CorepageStyless.inputStyle, height: '100px', borderRadius: '8px' }}
                         />
                         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                             <button type="submit" style={{ ...CorepageStyless.buttonStyle, marginRight: '10px' }}>
@@ -148,12 +164,12 @@ const WritingPage = () => {
                         </div>
                     </form>
                 </div>
-                <div style={{ ...CorepageStyless.sideContentStyle }}> {/* 우측 사이드 영역 */}
+                <div style={{ ...CorepageStyless.sideContentStyles }}> {/* 우측 사이드 영역 */}
                     {/* 여기에 우측 사이드 영역의 내용을 추가하세요 */}
                 </div>
             </div>
         </div>
     );
 };
-
+  
 export default WritingPage;
