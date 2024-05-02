@@ -39,7 +39,10 @@ const WritingPage = () => {
         const storedRecipes = JSON.parse(localStorage.getItem('recipes')) ?? [];
         const No = storedRecipes.length > 0 ? Math.max(...storedRecipes.map(recipe => recipe.No)) + 1 : 1;
 
-       
+        if (!category) {
+            alert('카테고리를 선택해주세요.');
+            return;
+        }
         
 
 
