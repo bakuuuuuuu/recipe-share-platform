@@ -39,7 +39,10 @@ const WritingPage = () => {
         const storedRecipes = JSON.parse(localStorage.getItem('recipes')) ?? [];
         const No = storedRecipes.length > 0 ? Math.max(...storedRecipes.map(recipe => recipe.No)) + 1 : 1;
 
-       
+        if (!category) {
+            alert('카테고리를 선택해주세요.');
+            return;
+        }
         
 
 
@@ -81,7 +84,7 @@ const WritingPage = () => {
     };
     const styless = {
         header: {
-            marginLeft: "15px",
+            marginRight:"10px",
             justifyContent: "center", // 가로 방향으로 가운데 정렬
             alignItems: "center", // 세로 방향으로 가운데 정렬
             backgroundColor: "white",
@@ -119,7 +122,7 @@ const WritingPage = () => {
                              <img
                                  src={URL.createObjectURL(image)}
                                  alt="업로드한 이미지"
-                                 style={{ maxWidth: '100%', marginBottom: '10px' }}
+                                 style={{ maxWidth: '100%',maxHeight:'200px', marginBottom: '10px' }}
                         />
                                )}
                             </div>
@@ -152,7 +155,7 @@ const WritingPage = () => {
                             placeholder="내용"
                             value={content}
                             onChange={(e) => setContent(e.target.value)}
-                            style={{ ...CorepageStyless.inputStyle, height: '300px', borderRadius: '8px' }}
+                            style={{ ...CorepageStyless.inputStyle, height: '100px', borderRadius: '8px' }}
                         />
                         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                             <button type="submit" style={{ ...CorepageStyless.buttonStyle, marginRight: '10px' }}>
