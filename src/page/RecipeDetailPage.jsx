@@ -6,7 +6,7 @@ const Container = styled.div`
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     border-radius: 8px;
     background-color: #fff;
 `;
