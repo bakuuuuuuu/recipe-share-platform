@@ -90,6 +90,8 @@ const WritingPage = () => {
             backgroundColor: "white",
             border: 'none',
             fontSize: "14px",
+            borderBottom: "1px solid lightgray", 
+            
             // 추가적인 스타일은 여기에 추가할 수 있습니다.
         },
     };
