@@ -44,10 +44,10 @@ const FoodCategory = () => {
     setFilteredRecipes(filtered);
   }, [searchTerm, activeCategory, recipes]);
 
-  // 카테고리 이름에 따라 레시피를 필터링하는 함수
-  const filterRecipesByCategory = (categoryName) => {
-    setActiveCategory(categoryName);
-  };
+ // 카테고리 이름에 따라 레시피를 필터링하는 함수
+ const filterRecipesByCategory = (categoryName) => {
+  setActiveCategory(categoryName);
+};
 
   // 스타일 정의
   const styles = {
@@ -75,12 +75,7 @@ const FoodCategory = () => {
 
   return (
     <div>
-     <Search
-        recipes={recipes} // 레시피 데이터를 전달
-        activeCategory={activeCategory} // 현재 선택된 카테고리를 전달
-        onSearchTermChange={(searchTerm) => setSearchTerm(searchTerm)} // 검색어 변경 핸들러 전달
-        onCategoryChange={(categoryName) => filterRecipesByCategory(categoryName)} // 카테고리 변경 핸들러 전달
-      />
+      <Search onChange={(event) => setSearchTerm(event.target.value)} />
       <div style={styles.container}>
         {categories.map(category => (
           <FoodCategoryButton
