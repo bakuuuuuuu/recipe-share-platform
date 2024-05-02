@@ -29,12 +29,12 @@ const searchStyles = {
 
   // 상단 메인배너(홈링크 이동) styles
   mainbanner: {
-    marginLeft:"20px",
+    marginLeft:"15px",
     justifyContent: "center", // 가로 방향으로 가운데 정렬
     alignItems: "center", // 세로 방향으로 가운데 정렬
     backgroundColor: "white",
     border: 'none',
-    fontSize: "16px",
+    fontSize: "14px",
   },
   
 };
@@ -49,8 +49,8 @@ const LoginbtnStyles = {
     color: "black",
     position: "fixed", // 상단에 고정
     top: 0, // 상단에 위치
-    marginTop: "24px", 
-    marginLeft: "450px",
+    marginTop: "21px", 
+    marginLeft: "400px",
     
  },
 };
@@ -112,8 +112,7 @@ function Search({ data }) {
             <input
               style={searchStyles.mainbanner}
               type="button"
-              value={"SimplyCook"}
-              
+              value={"SimplyCook"}             
             />
           </a>
           
