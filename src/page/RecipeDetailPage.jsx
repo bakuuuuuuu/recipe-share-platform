@@ -13,7 +13,7 @@ const Container = styled.div`
 
 const Title = styled.h2`
     color: #333;
-    border-bottom: 2px solid #4CAF50;
+    border-bottom: 2px solid #35292A;
     padding-bottom: 10px;
     
 `;
@@ -28,7 +28,8 @@ const Detail = styled.div`
     margin-top: 20px;
     strong {
         color: #666;
-        font-size: 16px;
+        font-size: 20px;
+        font-family: 'Arial, sans-serif';
     }
 `;
 
