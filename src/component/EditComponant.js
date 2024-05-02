@@ -63,7 +63,7 @@ export function SelectComponant(props) {
     <div style={style.container}>
       <p style={style.title}>{title} : </p>
       <div style={style.subtitleContainer} />
-      <select style={style.subtitle} value={value} onChange={onChange}>
+      <select style={style.subtitle} value={value === "male" || value === "female" ? (value==="male" ? "남성": "여성")  : value} onChange={onChange}>
         {options.map(option => <option value={option} key={option}>{option}</option>)}
 
       </select>
