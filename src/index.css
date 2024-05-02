@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     margin: 0px;
     padding: 0px;
 
@@ -6,5 +7,14 @@ body, html {
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    overflow: auto;
+    /* 스크롤 기능을 유지합니다 */
 
-} 
+}
+
+
+
+*::-webkit-scrollbar {
+    display: none;
+    /* 웹킷 브라우저에서 스크롤바를 숨깁니다 */
+}
