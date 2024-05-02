@@ -13,6 +13,7 @@ import { initUesrData } from './domain/userData';
 import EditAllPostPage from './component/EditAllPostPage';
 import UserEditForm from './page/UserEditForm';
 import { initPostData } from './domain/postData';
+import RecipeDetailPage from './page/RecipeDetailPage';
 
 
 // git test
@@ -39,10 +40,11 @@ function App() {
           <Route path="editAllPostPage" element={<EditAllPostPage />} />
           <Route path="userEditForm" element={<UserEditForm />} />
         </Route>
-      </Route>
-    </Routes>
-  </>
+          {/* 레시피 상세 페이지 라우트 추가 */}
+          <Route path="/recipe/:No" element={<RecipeDetailPage />} />
+        </Route>
+      </Routes>
+    </>
   );
 }
-
 export default App;
