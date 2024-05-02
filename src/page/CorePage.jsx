@@ -8,8 +8,6 @@ const CorepageStyles ={
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh', // 화면 전체 높이를 차지 
-      bottom: '0',
-      
   },
 
   //중앙 영역 styles
@@ -26,7 +24,7 @@ const CorepageStyles ={
   sideContentStyle : {
     flex: '1', // 나머지 영역을 균등하게 나눔
     backgroundColor: 'lightgrey', // 사이드 회색 배경
-    height: "2000px", // 높이를 화면 전체로
+    height: '2000px', // 높이를 화면 전체로
     borderRight: "2px solid white",
     borderLeft: "2px solid white",
   },

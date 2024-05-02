@@ -17,7 +17,7 @@ const FoodCategory = () => {
   const [recipes, setRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
   const [activeCategory, setActiveCategory] = useState(''); // 선택된 카테고리 이름을 저장하는 상태
-  const [searchResults,setSearchResults] = useState('');
+  const [searchTerm, setSearchTerm] = useState(''); // 검색어를 저장하는 상태
 
   useEffect(() => {
     // 로컬 스토리지에서 레시피를 불러옵니다.
@@ -28,23 +28,27 @@ const FoodCategory = () => {
     }
   }, []);
 
-  const handleSearchResults = (results) => {
-    setSearchResults(results);
-  };
+  useEffect(() => {
+    // 검색어가 변경될 때마다 필터링된 레시피를 업데이트합니다.
+    const filtered = recipes.filter(recipe =>
+      recipe.content.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      recipe.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      recipe.savedUserId.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredRecipes(filtered);
+  }, [searchTerm, recipes]);
 
   // 카테고리 이름에 따라 레시피를 필터링하는 함수
   const filterRecipesByCategory = (categoryName) => {
+    let filtered;
     if (categoryName === '전체') {
-      setFilteredRecipes(recipes);
+      filtered = recipes;
     } else {
-      const filtered = recipes.filter(recipe => recipe.category === categoryName);
-      setFilteredRecipes(filtered);
+      filtered = recipes.filter(recipe => recipe.category === categoryName);
     }
-  };
-
-  // 카테고리 버튼 클릭 시 실행되는 함수
-  const handleClick = (categoryName) => {
-    filterRecipesByCategory(categoryName);
+    setFilteredRecipes(filtered);
+    // 선택된 카테고리를 설정
+    setActiveCategory(categoryName);
   };
 
   // 스타일 정의
@@ -73,18 +77,19 @@ const FoodCategory = () => {
 
   return (
     <div>
-      <Search onDataReceived={handleSearchResults} />
+      <Search onChange={(event) => setSearchTerm(event.target.value)} />
       <div style={styles.container}>
         {categories.map(category => (
           <FoodCategoryButton
             key={category.name}
             category={category}
-            onClick={() => handleClick(category.name)}
-          />
+            onClick={() => filterRecipesByCategory(category.name)}
+            isActive={category.name === activeCategory} // 현재 카테고리가 활성화된 경우 isActive를 true로 설정
+        />
         ))}
       </div>
       <div style={styles.activeCategoryDisplay}>
-      {activeCategory ? `${activeCategory}` : "전체"}
+        {activeCategory ? `${activeCategory}` : "전체"}
       </div>
       <RecipeList recipes={filteredRecipes} />
       <UnderMenu />
