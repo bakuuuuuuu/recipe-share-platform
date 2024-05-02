@@ -25,7 +25,7 @@ const Image = styled.img`
     height: 400px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-    margin: 30px auto; /* Center the image horizontally */
+    margin: 30px auto;
     display: block; 
 `;
 
