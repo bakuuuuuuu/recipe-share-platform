@@ -17,6 +17,7 @@ const FoodCategory = () => {
   const [recipes, setRecipes] = useState([]);
   const [filteredRecipes, setFilteredRecipes] = useState([]);
   const [activeCategory, setActiveCategory] = useState(''); // 선택된 카테고리 이름을 저장하는 상태
+  const [searchResults,setSearchResults] = useState('');
 
   useEffect(() => {
     // 로컬 스토리지에서 레시피를 불러옵니다.
@@ -26,6 +27,10 @@ const FoodCategory = () => {
       setFilteredRecipes(storedRecipes); // 초기 화면에 모든 레시피를 보여줌
     }
   }, []);
+
+  const handleSearchResults = (results) => {
+    setSearchResults(results);
+  };
 
   // 카테고리 이름에 따라 레시피를 필터링하는 함수
   const filterRecipesByCategory = (categoryName) => {
@@ -39,9 +44,7 @@ const FoodCategory = () => {
 
   // 카테고리 버튼 클릭 시 실행되는 함수
   const handleClick = (categoryName) => {
-    console.log(`${categoryName} was clicked`);
     filterRecipesByCategory(categoryName);
-    setActiveCategory(categoryName); // 클릭된 카테고리 이름을 상태에 저장
   };
 
   // 스타일 정의
@@ -70,7 +73,7 @@ const FoodCategory = () => {
 
   return (
     <div>
-      <Search />
+      <Search onDataReceived={handleSearchResults} />
       <div style={styles.container}>
         {categories.map(category => (
           <FoodCategoryButton

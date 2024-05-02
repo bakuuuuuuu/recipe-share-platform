@@ -1,5 +1,8 @@
-//검색기능을 포함한 상단영역 jsx 원본 
+//검색기능을 포함한 상단영역 jsx 
 import React, { useEffect, useState } from 'react';
+import FoodCategory from '../css/FoodCategory';
+import FoodCategoryButton from './FoodCategoryButton';
+import RecipeList from '../css/RecipeList';
 
 const searchStyles = {
   // 전체적인 styles
@@ -68,15 +71,21 @@ function Search({ data }) {
   
 
 
-  const handleSearch = (e) => {
-    const searchTerm = e.target.value;
+  const handleSearch = (searchTerm) => {
     setQuery(searchTerm);
   
-    const results = data.filter(item =>
-      item.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    // data가 배열인지 확인
+    if (Array.isArray(data)) {
+      const regex = new RegExp(searchTerm, 'i'); // 대소문자 구분 없이 검색
+      const results = data.filter(item =>
+        regex.test(item.title)
+      );
   
-    setSearchResults(results);
+      setSearchResults(results);
+    } else {
+      // data가 배열이 아니면 빈 배열을 설정
+      setSearchResults([]);
+    }
   };
   
      
@@ -91,9 +100,9 @@ function Search({ data }) {
     }
   };   
 
-  const handleSearchBarClick = () => {
-    window.location.href= '/foodcategory'; // 이동할 경로를 '/CATEGORY'로 설정
-  };
+  // const handleSearchBarClick = () => {
+  //   window.location.href= '/foodcategory'; // 이동할 경로를 '/CATEGORY'로 설정
+  // };
   
    // 카테고리 필터링 함수
    const filterCategory = (searchResults) => {
@@ -112,17 +121,18 @@ function Search({ data }) {
             <input
               style={searchStyles.mainbanner}
               type="button"
-              value={"SimplyCook"}             
+              value={"SimplyCook"}
+              
             />
           </a>
           
           <input
             type="text"
             value={query}
-            onChange={handleSearch}
+            onChange={(e) => handleSearch(e.target.value)}
             placeholder="음식 카테고리 검색(ex 한식)"
-            style={{ width: "30%", height: "40%", fontSize: 12, borderRadius: "10px", border: "1px solid black",}}
-            onClick={handleSearchBarClick}
+            style={{ width: "30%", height: "40%", fontSize: 12, borderRadius: "10px", border: "1px solid black"}}
+
           />
           
           {/* 로그인 버튼 */}
@@ -134,7 +144,7 @@ function Search({ data }) {
           </button>
         </div>
         <ul style={{ overflowY: "scroll", width: "10%", height: "50%", textAlign: "left", listStyle: "none", padding: 0, border:"none"}}>
-          {filterCategory(searchResults).map((item, index) => (
+          {searchResults.map((item, index) => (
              <li key={index}>{item}</li>
           ))}
         </ul>
@@ -144,4 +154,3 @@ function Search({ data }) {
 };
 
 export default Search;
-
