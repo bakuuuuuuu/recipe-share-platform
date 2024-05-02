@@ -8,7 +8,7 @@ const searchStyles = {
     display: "flex",
     justifyContent: "center", // 가로 방향으로 가운데 정렬
     alignItems: "center", // 세로 방향으로 가운데 정렬
-    borderBottom: "3px solid white",
+    borderBottom: "1px solid lightgray",
     width: "100%",
     height: 40,
     position: "fixed", // 상단에 고정
