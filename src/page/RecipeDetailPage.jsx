@@ -22,6 +22,7 @@ const Image = styled.img`
     max-width: 100%;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    padding-top: 20px;
 `;
 
 const Detail = styled.div`
