@@ -10,6 +10,7 @@ const imageStyle = {
 }
 
 const profileStyle = {
+    borderRadius: "10px",
     backgroundColor: "white",
     padding: "20px 15px",
     display: "flex",
@@ -70,7 +71,10 @@ function Profile(props) {
     }
 
     return (<div className="Profile" style={profileStyle}>
-        <img style={imageStyle} src={profileImage} alt="userProfileImage" onClick={onProfileImageClicked}></img>
+        <img style={imageStyle} src={currentData.gender === "male" ? 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7ZAHBHldry_U6Ho-jC4cencXC390Zx3wZvlMJp_DAZA&s"
+    : "https://cdn-icons-png.flaticon.com/512/3135/3135823.png"    
+    } alt="userProfileImage" onClick={onProfileImageClicked}></img>
         <span style={profileStyle.userNameStyle}>{name}</span>
     </div>)
 }
