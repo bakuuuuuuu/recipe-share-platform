@@ -1,37 +1,60 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Container = styled.div`
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background-color: #fff;
+`;
+
+const Title = styled.h2`
+    color: #333;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+    
+`;
+
+const Image = styled.img`
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+`;
+
+const Detail = styled.div`
+    margin-top: 20px;
+    strong {
+        color: #666;
+        font-size: 16px;
+    }
+`;
 
 const RecipeDetailPage = ({ recipes }) => {
   const { No } = useParams();
-
-  // 로컬 스토리지에서 저장된 레시피 데이터를 가져옵니다.
   const storedRecipes = JSON.parse(localStorage.getItem('recipes')) ?? [];
-
-  // No 값을 이용해 해당 레시피를 찾습니다.
   const recipe = storedRecipes.find(recipe => recipe.No === parseInt(No));
 
-  // No 값에 해당하는 레시피가 없을 경우에 대한 처리
   if (!recipe) {
-    return <div>해당 레시피를 찾을 수 없습니다.</div>;
+    return <Container>해당 레시피를 찾을 수 없습니다.</Container>;
   }
 
-  // 레시피가 있을 경우 상세 내용을 표시합니다.
   return (
-    <div>
-      <h2>{recipe.title}</h2>
-      <div>
+    <Container>
+      <Title>{recipe.title}</Title>
+      <Detail>
         <strong>작성자:</strong> {recipe.savedUserId}
-      </div>
-      <div>
+      </Detail>
+      <Detail>
         <strong>카테고리:</strong> {recipe.category}
-      </div>
-      <div>
-        <img src={recipe.imageUrl} alt="레시피 이미지" style={{ maxWidth: '100%' }} />
-      </div>
-      <div>
+      </Detail>
+      <Image src={recipe.imageUrl} alt="레시피 이미지" />
+      <Detail>
         <strong>내용:</strong> {recipe.content}
-      </div>
-    </div>
+      </Detail>
+    </Container>
   );
 };
 
