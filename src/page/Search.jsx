@@ -112,8 +112,7 @@ function Search({ data }) {
             <input
               style={searchStyles.mainbanner}
               type="button"
-              value={"SimplyCook"}
-              
+              value={"SimplyCook"}             
             />
           </a>
           
