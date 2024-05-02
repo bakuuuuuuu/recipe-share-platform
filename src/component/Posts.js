@@ -14,8 +14,8 @@ const style = {
         margin: "0px",
         marginBottom: "20px",
         backgroundColor: "white",
-        borderBottom: "2px rgb(221,221,221) solid"
-
+        borderBottom: "2px rgb(221,221,221) solid",
+        borderRadius: "5px",
     },
     rowContainer: {
         display: "flex",
@@ -29,6 +29,7 @@ const style = {
         justifyContent: "center",
     },
     image: {
+        borderRadius: "5px 0px 0px 5px",
         width: "120px",
         height: "100px",
     },

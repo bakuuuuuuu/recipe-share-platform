@@ -12,6 +12,7 @@ const style = {
     },
 
     li: {
+      borderRadius: "5px",
         margin: "0px",
         marginBottom: "20px",
         backgroundColor: "white",
@@ -31,6 +32,7 @@ const style = {
         justifyContent: "center",
     },
     image: {
+      borderRadius: "5px 0px 0px 5px",
         width: "120px",
         height: "100px",
     },

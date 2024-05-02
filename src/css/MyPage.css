@@ -19,7 +19,7 @@ h1 {
 
 ul {
     border: 1px solid rgb(241, 241, 241);
-
+    border-radius: 10px;
     padding: 30px;
     background-color: white;
     display: block;

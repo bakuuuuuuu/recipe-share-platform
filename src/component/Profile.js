@@ -10,6 +10,7 @@ const imageStyle = {
 }
 
 const profileStyle = {
+    borderRadius: "10px",
     backgroundColor: "white",
     padding: "20px 15px",
     display: "flex",
