@@ -4,25 +4,28 @@ import styled from 'styled-components';
 
 const Container = styled.div`
     max-width: 800px;
-    margin: 40px auto;
+    max-height: 85%;
+    margin: 25px auto;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     border-radius: 8px;
     background-color: #fff;
+    overflow-y: auto; 
 `;
 
 const Title = styled.h2`
     color: #333;
     border-bottom: 2px solid #35292A;
     padding-bottom: 10px;
-    
 `;
 
 const Image = styled.img`
     max-width: 100%;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.15);
-    padding-top: 20px;
+    margin: 30px;
+    width :600px;
+    height: 400px;
 `;
 
 const Detail = styled.div`
