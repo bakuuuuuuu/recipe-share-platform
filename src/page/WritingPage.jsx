@@ -70,7 +70,7 @@ const WritingPage = () => {
     };
 
     const handleCancel = () => {
-        navigate('/');
+        navigate('/FoodCategory');
     };
 
     const handleHomeClick = () => {
