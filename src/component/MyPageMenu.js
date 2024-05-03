@@ -13,9 +13,9 @@ const menu = [
 ];
 
 const adminMenu = [
-    { title: "전체 작성 글 확인 및 삭제", ico: "edit_document", link: "./editAllPostPage" },
+    { title: "전체 게시글 확인 및 삭제", ico: "edit_document", link: "./editAllPostPage" },
     // { title: "전체 댓글 조회 및 삭제", ico: "chat_error", link: "./myComments" },
-    { title: "회원 정보 수정", ico: "manage_accounts", link: "./UserEditForm" },
+    { title: "전체 회원 정보 수정", ico: "manage_accounts", link: "./UserEditForm" },
 ];
 function MyPageMenu() {
     const user = useContext(UserContext); 

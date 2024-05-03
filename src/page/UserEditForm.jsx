@@ -50,7 +50,7 @@ const UserEditForm = () => {
 
     return (
         <div id='UserEditForm'>
-            <h2>회원 정보 수정</h2>
+            <h2>전체 회원 정보 수정</h2>
             <div id='tablediv'>
                 <table>
                     <thead>
