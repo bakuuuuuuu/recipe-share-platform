@@ -1,75 +1,40 @@
+![image](https://github.com/bakuuuuuuu/recipe-share-platform/assets/54611807/5099834a-a7db-4bba-94d4-89e1b2822589)![image](https://github.com/bakuuuuuuu/recipe-share-platform/assets/54611807/260b2d17-220d-4929-a92a-b09b256a5bad)![image](https://github.com/bakuuuuuuu/recipe-share-platform/assets/54611807/b9f995a5-6f2f-49a9-a958-2c6d7bf82dac)# 레시피 공유 플랫폼
+
+## 참고 사이트
+https://m.10000recipe.com/
+
+
+# 시연영상
+https://github.com/bakuuuuuuu/recipe-share-platform/assets/54611807/3e92e6b2-1ada-42af-8963-5a7531551b54
+
+
+# **Development Environment**
+
+| 항목 | 내용 |
+| --- | --- |
+| OS | Windows 10 |
+| IDE | Visual Studio Code |
+| Language | JavaScript |
+| FrameWork | React |
+| library | react-router-dom@6.23.0, @fortawesome, styled-components@6.1.9 |  
+| React Version | ^18.3.1 |
+
+
+# Members
+
+| Name | Role |
+| --- | --- |
+| 황영진(팀장) | 로그인/회원가입 페이지
+아이디/비밀번호 찾기 페이지
+전체 회원 관리 기능 |
+| 강민준 | 메인 페이지, 검색 기능 |
+| 서윤오 | 마이 페이지, 전체 글 관리 기능, 회원 정보 수정 기능 |
+| 최은미 | 카테고리 페이지, 카테고리 리스트 출력 기능, 레시피 상세 페이지  |
+| 황영진 | 레시피 작성 페이지, 레시피 저장 기능 |
+
+
+
 ## 시작할 때 오류 뜰 경우 ( react-script 부재 오류 )
 
 터미널에 npm install -save react-scripts
 이후 npm start
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
