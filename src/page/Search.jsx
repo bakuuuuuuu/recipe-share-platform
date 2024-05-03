@@ -95,6 +95,10 @@ function Search({ data }) {
     }
   };   
 
+  const handleSearchBarClick = () => {
+    window.location.href= '/foodcategory'; // 이동할 경로를 '/CATEGORY'로 설정
+  };
+
   const filterCategory = (searchResults) => {
     return searchResults.map(recipe => recipe.category); // 레시피 객체에서 카테고리만 추출하여 반환
   };
@@ -125,7 +129,8 @@ function Search({ data }) {
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown} // 엔터 키 감지
             placeholder="음식 카테고리 검색(ex 한식)"
-            style={{ width: "30%", height: "40%", fontSize: 12, borderRadius: "10px", border: "1px solid black"}}           
+            style={{ width: "30%", height: "40%", fontSize: 12, borderRadius: "10px", border: "1px solid black"}} 
+            onClick={handleSearchBarClick}          
           />
 
           {/* Search button */}
