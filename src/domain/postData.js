@@ -24,7 +24,7 @@ export function initPostData() {
     ));
 
     RecipeArray.push(new Recipes(
-      "admin",
+      "user1",
       2,
       "2분 완성 초간단 토마토 스프~다이어트에 좋은 토마토 요리",
       `쿨캣이 자주 만들어 먹는 간단하고 맛있는 토마토 수프입니다.
@@ -40,7 +40,7 @@ export function initPostData() {
     ));
 
     RecipeArray.push(new Recipes(
-      "admin",
+      "user2",
       3,
       "[간단 자취요리] 쯔유없이! 핵 맛있는 가츠동 만들기 / 돈가스 덮밥",
       `안녕하세요 구독자님들 ♥ 오늘은 가츠동을 만들었어요!
@@ -54,7 +54,7 @@ export function initPostData() {
       "https://recipe1.ezmember.co.kr/cache/recipe/2016/07/11/d893e9cb42200003911fdca7ed525d311.jpg"
     ));
     RecipeArray.push(new Recipes(
-      "admin",
+      "user3",
       4,
       "떠먹는 티라미수 만들기",
       `노오븐 베이킹`,
@@ -62,7 +62,7 @@ export function initPostData() {
       "https://recipe1.ezmember.co.kr/cache/recipe/2019/02/03/2b6a6806bba2f1ba5aef0854884710f91.png"
     ));
     RecipeArray.push(new Recipes(
-      "user",
+      "user4",
       5,
       "백선생, 백종원 중국집 짜장면 만들기~!",
       `집밥백선생의 짜장면 레시피를 보고 만들었습니다.`,

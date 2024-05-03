@@ -17,11 +17,10 @@ export function initUesrData() {
     userArray = new Array();
     console.log("initalize UserData");
     userArray.push(new UserData("admin", "1234", "test@gmail.com", "서윤오", "010-1234-5678", "male", "한식", "admin"));
-    userArray.push(new UserData("user", "1234", "test@gmail.com", "황영진", "010-1234-5678", "male", "한식", "user"));
-    userArray.push(new UserData("test1", "1234", "test@gmail.com", "테스트1", "010-1234-5678", "male", "한식", "user"));
-    userArray.push(new UserData("test2", "1234", "test@gmail.com", "테스트2", "010-1234-5678", "male", "한식", "user"));
-    userArray.push(new UserData("test3", "1234", "test@gmail.com", "테스트3", "010-1234-5678", "male", "한식", "user"));
-    userArray.push(new UserData("test4", "1234", "test@gmail.com", "테스트4", "010-1234-5678", "male", "한식", "user"));
+    userArray.push(new UserData("user1", "1234", "test@gmail.com", "황영진", "010-1234-5678", "male", "한식", "user"));
+    userArray.push(new UserData("user2", "1234", "test@gmail.com", "최은미", "010-1234-5678", "female", "한식", "user"));
+    userArray.push(new UserData("user3", "1234", "test@gmail.com", "문희원", "010-1234-5678", "male", "한식", "user"));
+    userArray.push(new UserData("user4", "1234", "test@gmail.com", "강민준", "010-1234-5678", "male", "한식", "user"));
     localStorage.setItem("userData", JSON.stringify(userArray));
   }
 }

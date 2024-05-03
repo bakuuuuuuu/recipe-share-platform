@@ -70,7 +70,7 @@ const WritingPage = () => {
     };
 
     const handleCancel = () => {
-        navigate('/');
+        navigate('/FoodCategory');
     };
 
     const handleHomeClick = () => {
@@ -117,7 +117,7 @@ const WritingPage = () => {
                             placeholder="제목"
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
-                            style={{ ...CorepageStyless.inputStyless, borderRadius: '8px', width: '500px'}}
+                            style={{ ...CorepageStyless.inputStyless, borderRadius: '8px', width: '580px'}}
                         />
                            <div style={{ maxHeight: '200px', overflow: 'hidden', marginBottom: '20px' }}> {/* 이미지 영역을 감싸는 div */}
                              {image && (
