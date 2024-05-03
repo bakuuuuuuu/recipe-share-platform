@@ -1,4 +1,4 @@
-![image](https://github.com/bakuuuuuuu/recipe-share-platform/assets/54611807/5099834a-a7db-4bba-94d4-89e1b2822589)![image](https://github.com/bakuuuuuuu/recipe-share-platform/assets/54611807/260b2d17-220d-4929-a92a-b09b256a5bad)![image](https://github.com/bakuuuuuuu/recipe-share-platform/assets/54611807/b9f995a5-6f2f-49a9-a958-2c6d7bf82dac)# 레시피 공유 플랫폼
+# 레시피 공유 플랫폼
 
 ## 참고 사이트
 https://m.10000recipe.com/
