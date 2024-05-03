@@ -7,6 +7,9 @@ https://m.10000recipe.com/
 # 시연영상
 https://github.com/bakuuuuuuu/recipe-share-platform/assets/54611807/3e92e6b2-1ada-42af-8963-5a7531551b54
 
+# 구조도
+![image](https://github.com/bakuuuuuuu/recipe-share-platform/assets/54611807/96cf55e1-5c55-43e5-8098-6f47bdae62b3)
+
 
 # **Development Environment**
 
