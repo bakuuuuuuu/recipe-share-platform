@@ -11,6 +11,8 @@ https://github.com/bakuuuuuuu/recipe-share-platform/assets/54611807/3e92e6b2-1ad
 # 구조도
 ![image](https://github.com/bakuuuuuuu/recipe-share-platform/assets/54611807/96cf55e1-5c55-43e5-8098-6f47bdae62b3)
 
+# 개발기간
+2024.04.27 ~ 2024. 05. 3
 
 # **Development Environment**
 
